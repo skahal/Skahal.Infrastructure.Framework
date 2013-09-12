@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">OSX</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Skahal.Infrastructure.Framework.UnitTests</RootNamespace>
+    <AssemblyName>Skahal.Infrastructure.Framework.UnitTests</AssemblyName>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'OSX|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\OSX</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'iOS|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\UNITY_IPHONE</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="HelperSharp">
+      <HintPath>..\packages\HelperSharp.0.0.2.9\lib\net35\HelperSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Utils.Zip">
+      <HintPath>..\packages\TestSharp.1.0.2\lib\net40\Ionic.Utils.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="TestSharp">
+      <HintPath>..\packages\TestSharp.1.0.2\lib\net40\TestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>..\packages\System.IO.Abstractions.1.4.0.66\lib\net35\System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions.TestingHelpers">
+      <HintPath>..\packages\System.IO.Abstractions.TestingHelpers.1.4.0.66\lib\net35\System.IO.Abstractions.TestingHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Commons\EventHandlerExtensionsTest.cs" />
+    <Compile Include="Net\Messaging\MessageConverterTest.cs" />
+    <Compile Include="Net\Messaging\DisconnectedEventArgsTest.cs" />
+    <Compile Include="Net\Messaging\MessageTest.cs" />
+    <Compile Include="Net\Messaging\MessengerBaseTest.cs" />
+    <Compile Include="Net\Messaging\MessageEventArgsTest.cs" />
+    <Compile Include="Logging\LogServiceTest.cs" />
+    <Compile Include="Commons\DependencyServiceTest.cs" />
+    <Compile Include="Pooling\PoolServiceTest.cs" />
+    <Compile Include="Net\NetHelperTest.cs" />
+    <Compile Include="Logging\FiltrableLogStrategyTest.cs" />
+    <Compile Include="Logging\BufferLogStrategyTest.cs" />
+    <Compile Include="Logging\LogStrategyBaseTest.cs" />
+    <Compile Include="Logging\Stubs\LogStrategyStub.cs" />
+    <Compile Include="Repositories\MemoryRepositoryTest.cs" />
+    <Compile Include="Commons\AppServiceTest.cs" />
+    <Compile Include="Domain\EntityBaseTest.cs" />
+    <Compile Include="Repositories\RepositoryExtensionsTest.cs" />
+    <Compile Include="People\UserTest.cs" />
+    <Compile Include="Globalization\GlobalizationServiceTest.cs" />
+    <Compile Include="Repositories\MemoryUnitOfWorkTest.cs" />
+    <Compile Include="Globalization\TextGlobalizationLabelRepositoryBaseTest.cs" />
+    <Compile Include="Globalization\FileGlobalizationLabelRepositoryTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Skahal.Infrastructure.Framework\Skahal.Infrastructure.Framework.csproj">
+      <Project>{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}</Project>
+      <Name>Skahal.Infrastructure.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

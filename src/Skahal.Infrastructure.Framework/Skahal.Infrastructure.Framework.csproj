@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">OSX</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Skahal.Infrastructure.Framework</RootNamespace>
+    <AssemblyName>Skahal.Infrastructure.Framework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'OSX|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\build</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <GenerateDocumentation>true</GenerateDocumentation>
+    <DocumentationFile>..\Build\Skahal.Infrastructure.Framework.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'iOS|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\build</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Build\Skahal.Infrastructure.Framework.xml</DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <GenerateDocumentation>true</GenerateDocumentation>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="HelperSharp">
+      <HintPath>..\packages\HelperSharp.0.0.2.9\lib\net35\HelperSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>..\packages\System.IO.Abstractions.1.4.0.66\lib\net35\System.IO.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Net\Messaging\DisconnectedEventArgs.cs" />
+    <Compile Include="Net\Messaging\IMessenger.cs" />
+    <Compile Include="Net\Messaging\Message.cs" />
+    <Compile Include="Net\Messaging\MessageConverter.cs" />
+    <Compile Include="Net\Messaging\MessengerBase.cs" />
+    <Compile Include="Commons\EventHandlerExtensions.cs" />
+    <Compile Include="Net\Messaging\MessageEventArgs.cs" />
+    <Compile Include="Commons\DependencyService.cs" />
+    <Compile Include="Logging\LogStrategyBase.cs" />
+    <Compile Include="Logging\ILogStrategy.cs" />
+    <Compile Include="Logging\LogWrittenEventArgs.cs" />
+    <Compile Include="Logging\LogService.cs" />
+    <Compile Include="Configuration\BootstrapperBase.cs" />
+    <Compile Include="Domain\IEntity.cs" />
+    <Compile Include="Domain\IAggregateRoot.cs" />
+    <Compile Include="Domain\EntityBase.cs" />
+    <Compile Include="Pooling\PoolService.cs" />
+    <Compile Include="Pooling\IPool.cs" />
+    <Compile Include="Pooling\PoolBase.cs" />
+    <Compile Include="Globalization\GlobalizationService.cs" />
+    <Compile Include="People\UserPreference.cs" />
+    <Compile Include="People\User.cs" />
+    <Compile Include="People\UserService.cs" />
+    <Compile Include="People\IUserRepository.cs" />
+    <Compile Include="Logging\BufferLogStrategy.cs" />
+    <Compile Include="Logging\LogMessage.cs" />
+    <Compile Include="Net\NetHelper.cs" />
+    <Compile Include="Net\Messaging\ConnectedEventArgs.cs" />
+    <Compile Include="Logging\FiltrableLogStrategy.cs" />
+    <Compile Include="Repositories\MemoryRepository.cs" />
+    <Compile Include="Net\IPostSubmitter.cs" />
+    <Compile Include="IO\IOfxTransaction.cs" />
+    <Compile Include="IO\OfxTransaction.cs" />
+    <Compile Include="IO\OfxWriter.cs" />
+    <Compile Include="SocialGamingNetwork\AchievementUnlockedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\AchievementUpdatedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\AchievementUpdatingEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\AchievementUpdatingFailedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\AchievementsRefreshedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\ActivityOpponentsRefreshedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\ISGNAchievementManager.cs" />
+    <Compile Include="SocialGamingNetwork\ISGNFactory.cs" />
+    <Compile Include="SocialGamingNetwork\ISGNLeaderboardManager.cs" />
+    <Compile Include="SocialGamingNetwork\ISGNMultiplayerManager.cs" />
+    <Compile Include="SocialGamingNetwork\ISGNPlayerManager.cs" />
+    <Compile Include="SocialGamingNetwork\ISGNUIManager.cs" />
+    <Compile Include="SocialGamingNetwork\ISGNVoiceChatManager.cs" />
+    <Compile Include="SocialGamingNetwork\InviteReceivedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\LeaderboardUpdatedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\LeaderboardUpdatingEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\LeaderboardUpdatingFailedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\OpponentConnectedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\OpponentDisconnectedEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\PlayerLoggedInEventArgs.cs" />
+    <Compile Include="SocialGamingNetwork\SGNAchievement.cs" />
+    <Compile Include="SocialGamingNetwork\SGNLeaderboard.cs" />
+    <Compile Include="SocialGamingNetwork\SGNPlayer.cs" />
+    <Compile Include="SocialGamingNetwork\SGNReliableDataManager.cs" />
+    <Compile Include="SocialGamingNetwork\Local\SHLocalSGNAchievementManager.cs" />
+    <Compile Include="SocialGamingNetwork\Local\SHLocalSGNFactory.cs" />
+    <Compile Include="SocialGamingNetwork\Local\SHLocalSGNLeaderboardManager.cs" />
+    <Compile Include="SocialGamingNetwork\Local\SHLocalSGNMultiplayerManager.cs" />
+    <Compile Include="SocialGamingNetwork\Local\SHLocalSGNPlayerManager.cs" />
+    <Compile Include="SocialGamingNetwork\Local\SHLocalSGNUIManager.cs" />
+    <Compile Include="SocialGamingNetwork\Local\SHLocalSGNVoiceChatManager.cs" />
+    <Compile Include="Commons\AppService.cs" />
+    <Compile Include="Commons\IAppStrategy.cs" />
+    <Compile Include="Repositories\IUnitOfWork.cs" />
+    <Compile Include="Repositories\IUnitOfWorkRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Commons\IProgressIndicator.cs" />
+    <Compile Include="Commons\ProgressIndicator.cs" />
+    <Compile Include="Domain\DomainException.cs" />
+    <Compile Include="Text\BindableTextKey.cs" />
+    <Compile Include="Text\DynamicTextBuilder.cs" />
+    <Compile Include="Text\StringExtensions.cs" />
+    <Compile Include="Text\StringHelper.cs" />
+    <Compile Include="Text\Spelling\ISpellingProvider.cs" />
+    <Compile Include="Text\Spelling\SpellingService.cs" />
+    <Compile Include="SocialGamingNetwork\SGNService.cs" />
+    <Compile Include="Repositories\MemoryUnitOfWork.cs" />
+    <Compile Include="Collections\CollectionExtensions.cs" />
+    <Compile Include="Globalization\GlobalizationExtensions.cs" />
+    <Compile Include="Globalization\GlobalizationLabel.cs" />
+    <Compile Include="Globalization\IGlobalizationLabelRepository.cs" />
+    <Compile Include="Repositories\RepositoryExtensions.cs" />
+    <Compile Include="Globalization\MemoryGlobalizationLabelRepository.cs" />
+    <Compile Include="Repositories\EntityRepositoryPair.cs" />
+    <Compile Include="Domain\ServiceBase.cs" />
+    <Compile Include="Globalization\TextGlobalizationLabelRepositoryBase.cs" />
+    <Compile Include="Globalization\FileGlobalizationLabelRepository.cs" />
+    <Compile Include="IO\FileSystem.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>
