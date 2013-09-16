@@ -13,17 +13,17 @@ namespace Skahal.Infrastructure.Framework.Repositories
 	/// In most of cases will be used for tests purposes.
 	/// </remarks>
 	/// </summary>
-	public class MemoryRepository<TEntity, TKey> : RepositoryBase<TEntity, TKey> where TEntity : IAggregateRoot<TKey> 
+	public class MemoryRepository<TEntity> : RepositoryBase<TEntity> where TEntity : IAggregateRoot 
 	{
 		#region Fields
-		private Func<TEntity, TKey> m_createNewKey;
+		private Func<TEntity, object> m_createNewKey;
 		#endregion
 
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Repositories.MemoryRepository&lt;TEntity, TKey&gt;"/> class.
 		/// </summary>
-		public MemoryRepository(Func<TEntity, TKey> createNewKey)
+        public MemoryRepository(Func<TEntity, object> createNewKey)
 		{
 			m_createNewKey = createNewKey;
 			Entities = new List<TEntity> ();
@@ -34,7 +34,8 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <param name="createNewKey">Create new key.</param>
 		/// <param name="unitOfWork">Unit of work.</param>
-		public MemoryRepository(IUnitOfWork<TKey> unitOfWork, Func<TEntity, TKey> createNewKey) : base(unitOfWork)
+        public MemoryRepository(IUnitOfWork unitOfWork, Func<TEntity, object> createNewKey)
+            : base(unitOfWork)
 		{
 			m_createNewKey = createNewKey;
 			Entities = new List<TEntity> ();
@@ -55,7 +56,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <returns>The found entity.</returns>
 		/// <param name="key">Key.</param>
-		public override TEntity FindBy (TKey key)
+		public override TEntity FindBy (object key)
 		{
 			return FindAll(0, 1, e => e.Key.Equals(key)).FirstOrDefault();
 		}
@@ -100,7 +101,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 				throw new InvalidOperationException ("There is another entity with id '{0}'.".With(item.Key));
 			}
 
-			if (item.Key == null || item.Key.Equals(default(TKey))) {
+			if (item.Key == null || item.Key == null) {
 				item.Key = m_createNewKey (item);
 			}
 

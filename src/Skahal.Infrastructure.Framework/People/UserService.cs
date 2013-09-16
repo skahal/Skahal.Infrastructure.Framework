@@ -12,7 +12,7 @@ namespace Skahal.Infrastructure.Framework.People
 	{
 		#region Fields
 		private static IUserRepository s_repository;
-		private static IUnitOfWork<string> s_unitOfWork;
+		private static IUnitOfWork s_unitOfWork;
 		private static User s_currentUser;
 		#endregion
 
@@ -23,7 +23,7 @@ namespace Skahal.Infrastructure.Framework.People
 		/// <param name="userRepository">User repository.</param>
 		public static void Initialize (IUserRepository userRepository)
 		{
-			s_unitOfWork = new MemoryUnitOfWork<string> ();
+			s_unitOfWork = new MemoryUnitOfWork ();
 			s_repository = userRepository;
 			s_repository.SetUnitOfWork (s_unitOfWork);
 		}

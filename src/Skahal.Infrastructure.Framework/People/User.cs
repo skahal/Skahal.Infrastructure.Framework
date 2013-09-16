@@ -9,7 +9,7 @@ namespace Skahal.Infrastructure.Framework.People
 	/// Represents a user.
 	/// </summary>
 	[Serializable]
-	public class User : EntityBase<string>, IAggregateRoot<string> 
+	public class User : EntityBase, IAggregateRoot 
 	{
 		#region Constructors
 		/// <summary>
@@ -27,7 +27,7 @@ namespace Skahal.Infrastructure.Framework.People
 		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.People.User"/> class.
 		/// </summary>
 		/// <param name="key">The entity key.</param>
-		public User(string key) : base(key)
+		public User(object key) : base(key)
 		{
 			Preferences = new List<UserPreference>();
 		}

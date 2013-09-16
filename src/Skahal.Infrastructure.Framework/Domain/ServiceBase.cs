@@ -7,10 +7,10 @@ namespace Skahal.Infrastructure.Framework.Domain
 	/// <summary>
 	/// A domain service base class.
 	/// </summary>
-	public abstract class ServiceBase<TEntity, TKey, TMainRepository, TUnitOfWork>
-		where TMainRepository : IRepository<TEntity, TKey>
-		where TUnitOfWork : IUnitOfWork<TKey>
-		where TEntity : IAggregateRoot<TKey>
+	public abstract class ServiceBase<TEntity, TMainRepository, TUnitOfWork>
+		where TMainRepository : IRepository<TEntity>
+		where TUnitOfWork : IUnitOfWork
+		where TEntity : IAggregateRoot
 	{
 		#region Constructors 
 		/// <summary>

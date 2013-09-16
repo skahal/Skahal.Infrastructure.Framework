@@ -12,16 +12,16 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 	public class MemoryRepositoryTest
 	{
 		#region Fields
-		private MemoryUnitOfWork<string> m_unitOfWork;
-		private MemoryRepository<User, string> m_target;
+		private MemoryUnitOfWork m_unitOfWork;
+		private MemoryRepository<User> m_target;
 		#endregion
 
 		#region Initialize
 		[SetUp]
 		public void InitializeTest()
 		{
-			m_unitOfWork = new MemoryUnitOfWork<string> ();
-			m_target = new MemoryRepository<User, string> (m_unitOfWork, (u) => { return Guid.NewGuid().ToString(); });
+			m_unitOfWork = new MemoryUnitOfWork ();
+			m_target = new MemoryRepository<User> (m_unitOfWork, (u) => { return Guid.NewGuid().ToString(); });
 		}
 		#endregion
 
@@ -106,7 +106,7 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 			var actual = m_target.FindAll(f => true).ToList();
 
 			Assert.AreEqual (1, actual.Count);
-			Assert.IsFalse (String.IsNullOrWhiteSpace(actual[0].Key));
+			Assert.IsFalse (String.IsNullOrWhiteSpace((string)actual[0].Key));
 		}
 
 		[Test()]

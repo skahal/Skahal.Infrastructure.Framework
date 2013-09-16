@@ -9,14 +9,14 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 	public class RepositoryExtensionsTest
 	{
 		#region Fields
-		private MemoryRepository<User, string> m_userRepository;
-		private IUnitOfWork<string> m_unitOfWork = new MemoryUnitOfWork<string>();
+		private MemoryRepository<User> m_userRepository;
+		private IUnitOfWork m_unitOfWork = new MemoryUnitOfWork();
 		#endregion
 
 		[SetUp]
 		public void InitializeFixture()
 		{
-			m_userRepository = new MemoryRepository<User, string> (m_unitOfWork, (u) => { return Guid.NewGuid().ToString(); });
+			m_userRepository = new MemoryRepository<User> (m_unitOfWork, (u) => { return Guid.NewGuid().ToString(); });
 		}
 
 		[Test()]

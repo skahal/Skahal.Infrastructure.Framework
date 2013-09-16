@@ -10,12 +10,12 @@ namespace Skahal.Infrastructure.Framework.Repositories
 	/// <summary>
 	/// Defines an in memory unit of work.
 	/// </summary>
-	public class MemoryUnitOfWork<TKey> : IUnitOfWork<TKey>
+	public class MemoryUnitOfWork : IUnitOfWork
     {
         #region Fields
-		private List<EntityRepositoryPair<TKey>> m_AddedEntities;
-		private List<EntityRepositoryPair<TKey>> m_changedEntities;
-		private List<EntityRepositoryPair<TKey>> m_deletedEntities;
+		private List<EntityRepositoryPair> m_AddedEntities;
+		private List<EntityRepositoryPair> m_changedEntities;
+		private List<EntityRepositoryPair> m_deletedEntities;
         #endregion
 
         #region Constructors
@@ -24,9 +24,9 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
         public MemoryUnitOfWork()
         {
-			m_AddedEntities = new List<EntityRepositoryPair<TKey>>();
-			m_changedEntities = new List<EntityRepositoryPair<TKey>>();
-			m_deletedEntities = new List<EntityRepositoryPair<TKey>>();
+			m_AddedEntities = new List<EntityRepositoryPair>();
+			m_changedEntities = new List<EntityRepositoryPair>();
+			m_deletedEntities = new List<EntityRepositoryPair>();
         }
         #endregion
 
@@ -36,9 +36,9 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <param name="repository">Repository.</param>
-		public void RegisterAdded(IAggregateRoot<TKey> entity, IUnitOfWorkRepository<TKey> repository)
+		public void RegisterAdded(IAggregateRoot entity, IUnitOfWorkRepository repository)
         {
-			m_AddedEntities.Add(new EntityRepositoryPair<TKey>(entity, repository));
+			m_AddedEntities.Add(new EntityRepositoryPair(entity, repository));
 	    }
 
 		/// <summary>
@@ -46,9 +46,9 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <param name="repository">Repository.</param>
-		public void RegisterChanged(IAggregateRoot<TKey> entity, IUnitOfWorkRepository<TKey> repository)
+		public void RegisterChanged(IAggregateRoot entity, IUnitOfWorkRepository repository)
         {
-			m_changedEntities.Add(new EntityRepositoryPair<TKey>(entity, repository));
+			m_changedEntities.Add(new EntityRepositoryPair(entity, repository));
         }
 
 		/// <summary>
@@ -56,15 +56,15 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <param name="repository">Repository.</param>
-		public void RegisterRemoved(IAggregateRoot<TKey> entity, IUnitOfWorkRepository<TKey> repository)
+		public void RegisterRemoved(IAggregateRoot entity, IUnitOfWorkRepository repository)
         {
-			m_deletedEntities.Add(new EntityRepositoryPair<TKey>(entity, repository));
+			m_deletedEntities.Add(new EntityRepositoryPair(entity, repository));
         }
 
 		/// <summary>
 		/// Commit the registered entities.
 		/// </summary>
-        public void Commit()
+        public virtual void Commit()
         {
            foreach (var item in m_deletedEntities)
             {

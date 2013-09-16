@@ -11,7 +11,7 @@ namespace Skahal.Infrastructure.Framework.UnitTests
 		[Test()]
 		public void EqualsOperator_NullEqualsNull_True ()
 		{
-			EntityBase<int> one = null;
+			EntityBase one = null;
 
 			Assert.IsTrue (one == null);
 		}
@@ -19,8 +19,8 @@ namespace Skahal.Infrastructure.Framework.UnitTests
 		[Test()]
 		public void Equals_DiffKeys_Fals ()
 		{
-			var target1 = MockRepository.GenerateMock<EntityBase<long>> (1L);
-			var target2 = MockRepository.GenerateMock<EntityBase<long>> (2L);
+			var target1 = MockRepository.GenerateMock<EntityBase> (1L);
+			var target2 = MockRepository.GenerateMock<EntityBase> (2L);
 
 			Assert.IsFalse (target1 == target2);
 		}

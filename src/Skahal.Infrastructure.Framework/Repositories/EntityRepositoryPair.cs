@@ -6,7 +6,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 	/// <summary>
 	/// Entity repository pair.
 	/// </summary>
-	internal class EntityRepositoryPair<TKey>
+	internal class EntityRepositoryPair
 	{
 		#region Constructors
 		/// <summary>
@@ -15,7 +15,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <param name="repository">Repository.</param>
-		public EntityRepositoryPair (IAggregateRoot<TKey> entity, IUnitOfWorkRepository<TKey> repository)
+		public EntityRepositoryPair (IAggregateRoot entity, IUnitOfWorkRepository repository)
 		{
 			Entity = entity;
 			Repository = repository;
@@ -27,13 +27,13 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// Gets or sets the entity.
 		/// </summary>
 		/// <value>The entity.</value>
-		public IAggregateRoot<TKey> Entity { get; set; }
+		public IAggregateRoot Entity { get; set; }
 
 		/// <summary>
 		/// Gets or sets the repository.
 		/// </summary>
 		/// <value>The repository.</value>
-		public IUnitOfWorkRepository<TKey> Repository { get; set; }
+		public IUnitOfWorkRepository Repository { get; set; }
 		#endregion
 	}
 }

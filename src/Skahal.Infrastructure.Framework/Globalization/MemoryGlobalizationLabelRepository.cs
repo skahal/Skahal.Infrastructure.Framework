@@ -6,7 +6,7 @@ namespace Skahal.Infrastructure.Framework.Globalization
 	/// <summary>
 	/// An in-memory globalization label repository.
 	/// </summary>
-	public class MemoryGlobalizationLabelRepository : MemoryRepository<GlobalizationLabel, string>, IGlobalizationLabelRepository
+	public class MemoryGlobalizationLabelRepository : MemoryRepository<GlobalizationLabel>, IGlobalizationLabelRepository
 	{
 		#region Constructors
 		/// <summary>
