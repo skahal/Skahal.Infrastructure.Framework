@@ -109,6 +109,20 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 			Assert.IsFalse (String.IsNullOrWhiteSpace((string)actual[0].Key));
 		}
 
+        [Test()]
+        public void Add_EntityWithIntId_AddedWithNewId()
+        {            
+            var target = new MemoryRepository<EntityWithIntIdStub>((e) => 1);
+            target.SetUnitOfWork(m_unitOfWork);
+            target.Add(new EntityWithIntIdStub());
+            m_unitOfWork.Commit();
+
+            var actual = target.FindAll(f => true).ToList();
+
+            Assert.AreEqual(1, actual.Count);
+            Assert.AreEqual(1, actual[0].Id);
+        }
+
 		[Test()]
 		public void Delete_NullEntity_ArgumentNullException ()
 		{

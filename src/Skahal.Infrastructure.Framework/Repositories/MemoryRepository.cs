@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using HelperSharp;
 using Skahal.Infrastructure.Framework.Domain;
 using Skahal.Infrastructure.Framework.Repositories;
@@ -68,12 +69,12 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="offset">Offset.</param>
 		/// <param name="limit">Limit.</param>
 		/// <param name="filter">Filter.</param>
-		public override IEnumerable<TEntity> FindAll (int offset, int limit, Func<TEntity, bool> filter)
+		public override IEnumerable<TEntity> FindAll (int offset, int limit, Expression<Func<TEntity, bool>> filter)
 		{
 			ExceptionHelper.ThrowIfNull ("filter", filter);
 
 			return Entities
-				.Where (e => filter(e))
+				.Where (e => filter.Compile()(e))
 				.OrderBy(e => e.Key)
 				.Skip(offset).Take(limit);
 		}
@@ -83,10 +84,10 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <returns>The number of the entities that matches the filter.</returns>
 		/// <param name="filter">Filter.</param>
-		public override long CountAll (Func<TEntity, bool> filter)
+        public override long CountAll(Expression<Func<TEntity, bool>> filter)
 		{
 			ExceptionHelper.ThrowIfNull ("filter", filter);
-			return Entities.Count (e => filter(e));
+			return Entities.Count (e => filter.Compile()(e));
 		}
 
 		/// <summary>
@@ -101,7 +102,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 				throw new InvalidOperationException ("There is another entity with id '{0}'.".With(item.Key));
 			}
 
-			if (item.Key == null || item.Key == null) {
+			if (item.Key == null || (item.Key.GetType().IsValueType && Activator.CreateInstance(item.Key.GetType()).Equals(item.Key))) {
 				item.Key = m_createNewKey (item);
 			}
 

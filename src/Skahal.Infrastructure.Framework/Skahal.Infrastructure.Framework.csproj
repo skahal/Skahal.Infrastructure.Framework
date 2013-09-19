@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'iOS|AnyCPU' ">
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>..\build</OutputPath>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Build\Skahal.Infrastructure.Framework.xml</DocumentationFile>
@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\EntityWithIdBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Net\Messaging\DisconnectedEventArgs.cs" />
     <Compile Include="Net\Messaging\IMessenger.cs" />

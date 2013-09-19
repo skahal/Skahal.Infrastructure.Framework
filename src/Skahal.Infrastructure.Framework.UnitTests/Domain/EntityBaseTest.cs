@@ -2,6 +2,7 @@ using System;
 using NUnit.Framework;
 using Rhino.Mocks;
 using Skahal.Infrastructure.Framework.Domain;
+using Skahal.Infrastructure.Framework.People;
 
 namespace Skahal.Infrastructure.Framework.UnitTests
 {
@@ -17,10 +18,10 @@ namespace Skahal.Infrastructure.Framework.UnitTests
 		}
 
 		[Test()]
-		public void Equals_DiffKeys_Fals ()
+		public void Equals_DiffKeys_False ()
 		{
-			var target1 = MockRepository.GenerateMock<EntityBase> (1L);
-			var target2 = MockRepository.GenerateMock<EntityBase> (2L);
+			var target1 = new User("1");
+            var target2 = new User("2");
 
 			Assert.IsFalse (target1 == target2);
 		}

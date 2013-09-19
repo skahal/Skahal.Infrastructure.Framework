@@ -2,6 +2,7 @@ using Skahal.Infrastructure.Framework.Domain;
 using System.Collections.Generic;
 using System;
 using HelperSharp;
+using System.Linq.Expressions;
 
 namespace Skahal.Infrastructure.Framework.Repositories
 {
@@ -49,14 +50,14 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="offset">Offset.</param>
 		/// <param name="limit">Limit.</param>
 		/// <param name="filter">Filter.</param>
-		public abstract IEnumerable<TEntity> FindAll(int offset, int limit, Func<TEntity, bool> filter);
+		public abstract IEnumerable<TEntity> FindAll(int offset, int limit, Expression<Func<TEntity, bool>> filter);
 
 		/// <summary>
 		/// Counts all entities that matches the filter.
 		/// </summary>
 		/// <returns>The found entities.</returns>
 		/// <param name="filter">Filter.</param>
-		public abstract long CountAll(Func<TEntity, bool> filter);
+		public abstract long CountAll(Expression<Func<TEntity, bool>> filter);
 
 		/// <summary>
 		/// Sets the unit of work.

@@ -14,6 +14,7 @@ namespace Skahal.Infrastructure.Framework.UnitTests
 	public class FileGlobalizationLabelRepositoryTest
 	{
 		[Test()]
+        [Ignore("Not yet implemented")]
 		public void FindAll_DiffCultures_DiffResults ()
 		{
 			var fileSystem = new MockFileSystem(new Dictionary<string, MockFileData>

@@ -2,6 +2,7 @@ using System;
 using Skahal.Infrastructure.Framework.Domain;
 using System.Linq;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace Skahal.Infrastructure.Framework.Repositories
 {
@@ -16,7 +17,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <returns>The found entities.</returns>
 		/// <param name="repository">Repository.</param>
 		/// <param name="filter">Filter.</param>
-		public static IEnumerable<TEntity> FindAll<TEntity>(this IRepository<TEntity> repository, Func<TEntity, bool> filter)
+		public static IEnumerable<TEntity> FindAll<TEntity>(this IRepository<TEntity> repository, Expression<Func<TEntity, bool>> filter)
 			where TEntity : IAggregateRoot
 		{
 			return repository.FindAll(0, int.MaxValue, filter);

@@ -38,7 +38,7 @@ namespace Skahal.Infrastructure.Framework.Domain
 		/// Gets the key.
 		/// </summary>
 		/// <value>The key.</value>
-		public object Key  { get; set; }
+		public virtual object Key  { get; set; }
 		#endregion
 
 		#region Methods
