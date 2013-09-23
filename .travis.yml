@@ -6,4 +6,4 @@ install:
  
 script:
   - xbuild ./src/Skahal.Infrastructure.Framework.sln /property:"Configuration=OSX;Platform=Any CPU"
-  - nunit-console ./src/Skahal.Infrastructure.Framework.UnitTests/bin/Debug/Skahal.Infrastructure.Framework.UnitTests.dll
+  - nunit-console ./src/Skahal.Infrastructure.Framework.UnitTests/bin/OSX/Skahal.Infrastructure.Framework.UnitTests.dll
