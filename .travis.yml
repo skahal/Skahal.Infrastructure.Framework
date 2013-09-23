@@ -1,0 +1,9 @@
+language: c
+ 
+install:
+  - sudo apt-get install mono-devel mono-gmcs nunit-console
+  - mozroots --import --sync
+ 
+script:
+  - xbuild ./src/Skahal.Infrastructure.Framework.sln /property:"Configuration=OSX;Platform=Any CPU"
+  - nunit-console ./src/Skahal.Infrastructure.Framework.UnitTests/bin/Debug/Skahal.Infrastructure.Framework.UnitTests.dll
