@@ -15,7 +15,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <param name="repository">Repository.</param>
-		public EntityRepositoryPair (IAggregateRoot entity, IUnitOfWorkRepository repository)
+		public EntityRepositoryPair (UnitOfWorkEntity entity, IUnitOfWorkRepository repository)
 		{
 			Entity = entity;
 			Repository = repository;
@@ -27,7 +27,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// Gets or sets the entity.
 		/// </summary>
 		/// <value>The entity.</value>
-		public IAggregateRoot Entity { get; set; }
+        public UnitOfWorkEntity Entity { get; set; }
 
 		/// <summary>
 		/// Gets or sets the repository.

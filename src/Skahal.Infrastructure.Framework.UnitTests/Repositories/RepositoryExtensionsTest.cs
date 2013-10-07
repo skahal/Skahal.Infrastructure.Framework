@@ -51,5 +51,26 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 
 			Assert.AreEqual ("3", m_userRepository.FindLast().Key);
 		}
+
+        [Test()]
+        public void FindFirst_NoMatch_Null()
+        {
+            var entity = new User() { Name = "1" };
+            m_userRepository.Add(entity);
+            m_unitOfWork.Commit();
+
+            Assert.IsNull(m_userRepository.FindFirst((u) => u.Name.Equals("2") ));
+        }
+
+        [Test()]
+        public void FindFirst_Match_Entity()
+        {
+            m_userRepository.Add(new User() { Name = "1" });
+            m_userRepository.Add(new User() { Name = "2" });
+            m_userRepository.Add(new User() { Name = "3" });
+            m_unitOfWork.Commit();
+
+            Assert.AreEqual("2", m_userRepository.FindFirst((u) => u.Name.Equals("2")).Name);
+        }
 	}
 }

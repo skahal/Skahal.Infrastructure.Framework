@@ -47,6 +47,19 @@ namespace Skahal.Infrastructure.Framework.Repositories
 			return repository.CountAll (f => true);
 		}
 
+        /// <summary>
+        /// Finds the first entity that match the filter.
+        /// </summary>
+        /// <typeparam name="TEntity">The entity type.</typeparam>
+        /// <param name="repository">The repository.</param>
+        /// <param name="filter">The filter.</param>
+        /// <returns>The first entity that match the filter or null if none match.</returns>
+        public static TEntity FindFirst<TEntity>(this IRepository<TEntity> repository, Expression<Func<TEntity, bool>> filter)
+            where TEntity : IAggregateRoot
+        {
+            return repository.FindAll(0, 1, filter).FirstOrDefault();
+        }
+
 		/// <summary>
 		/// Finds the last entity.
 		/// </summary>
@@ -58,21 +71,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 			where TEntity : IAggregateRoot
 		{
 			return repository.FindAll (Convert.ToInt32(repository.CountAll() - 1), 1, f => true).FirstOrDefault ();
-		}
-
-		/// <summary>
-		/// Finds the last key.
-		/// </summary>
-		/// <returns>The last key.</returns>
-		/// <param name="repository">Repository.</param>
-		/// <typeparam name="TEntity">The 1st type parameter.</typeparam>
-		/// <typeparam name="TKey">The 2st type parameter.</typeparam>
-		public static long FindLastKey<TEntity>(this IRepository<TEntity> repository) 
-			where TEntity : IAggregateRoot
-		{
-			return 0;
-		}
-
+		}		
 	}
 }
 

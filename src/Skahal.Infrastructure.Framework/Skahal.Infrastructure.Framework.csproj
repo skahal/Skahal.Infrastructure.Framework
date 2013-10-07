@@ -82,6 +82,7 @@
     <Compile Include="IO\IOfxTransaction.cs" />
     <Compile Include="IO\OfxTransaction.cs" />
     <Compile Include="IO\OfxWriter.cs" />
+    <Compile Include="Repositories\UnitOfWorkEntity.cs" />
     <Compile Include="SocialGamingNetwork\AchievementUnlockedEventArgs.cs" />
     <Compile Include="SocialGamingNetwork\AchievementUpdatedEventArgs.cs" />
     <Compile Include="SocialGamingNetwork\AchievementUpdatingEventArgs.cs" />

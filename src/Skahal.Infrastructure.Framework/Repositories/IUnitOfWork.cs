@@ -34,5 +34,12 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// Commit the registered entities.
 		/// </summary>
         void Commit();
+
+        /// <summary>
+        /// Get the entity which is registered inside the unit of work.
+        /// </summary>
+        /// <param name="key">The entity key.</param>
+        /// <returns>The entity instance or null if it is not register.</returns>
+        UnitOfWorkEntity Get(object key);
     }
 }

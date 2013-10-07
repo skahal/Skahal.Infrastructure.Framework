@@ -126,6 +126,8 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="item">Item.</param>
 		public virtual void PersistNewItem(IAggregateRoot item)
         {
+            ExceptionHelper.ThrowIfNull("item", item);
+
             PersistNewItem((TEntity)item);
         }
 
@@ -135,6 +137,8 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="item">Item.</param>
 		public virtual void PersistUpdatedItem(IAggregateRoot item)
         {
+            ExceptionHelper.ThrowIfNull("item", item);
+
             PersistUpdatedItem((TEntity)item);
         }
 
@@ -144,6 +148,8 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="item">Item.</param>
 		public virtual void PersistDeletedItem(IAggregateRoot item)
         {
+            ExceptionHelper.ThrowIfNull("item", item);
+
             PersistDeletedItem((TEntity)item);
         }
         #endregion
@@ -182,7 +188,11 @@ namespace Skahal.Infrastructure.Framework.Repositories
         #endregion
 
 		#region Helpers
-		private void ValidateUnitOfWork()
+        /// <summary>
+        /// Validates the unit of work.
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException">There is no UnitOfWork configured for the repository '{0}'..With(GetType().Name)</exception>
+		protected void ValidateUnitOfWork()
 		{
 			if (m_unitOfWork == null) {
 				throw new InvalidOperationException ("There is no UnitOfWork configured for the repository '{0}'.".With(GetType().Name));

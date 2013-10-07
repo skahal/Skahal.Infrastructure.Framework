@@ -72,6 +72,7 @@
     <Compile Include="Repositories\MemoryRepositoryTest.cs" />
     <Compile Include="Commons\AppServiceTest.cs" />
     <Compile Include="Domain\EntityBaseTest.cs" />
+    <Compile Include="Repositories\RepositoryBaseTest.cs" />
     <Compile Include="Repositories\RepositoryExtensionsTest.cs" />
     <Compile Include="People\UserTest.cs" />
     <Compile Include="Globalization\GlobalizationServiceTest.cs" />

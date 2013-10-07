@@ -13,9 +13,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 	public class MemoryUnitOfWork : IUnitOfWork
     {
         #region Fields
-		private List<EntityRepositoryPair> m_AddedEntities;
-		private List<EntityRepositoryPair> m_changedEntities;
-		private List<EntityRepositoryPair> m_deletedEntities;
+		private List<EntityRepositoryPair> m_entities;
         #endregion
 
         #region Constructors
@@ -24,9 +22,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
         public MemoryUnitOfWork()
         {
-			m_AddedEntities = new List<EntityRepositoryPair>();
-			m_changedEntities = new List<EntityRepositoryPair>();
-			m_deletedEntities = new List<EntityRepositoryPair>();
+            m_entities = new List<EntityRepositoryPair>();
         }
         #endregion
 
@@ -38,7 +34,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="repository">Repository.</param>
 		public void RegisterAdded(IAggregateRoot entity, IUnitOfWorkRepository repository)
         {
-			m_AddedEntities.Add(new EntityRepositoryPair(entity, repository));
+            m_entities.Add(new EntityRepositoryPair(new UnitOfWorkEntity(entity, UnitOfWorkEntityState.Added), repository));
 	    }
 
 		/// <summary>
@@ -48,7 +44,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="repository">Repository.</param>
 		public void RegisterChanged(IAggregateRoot entity, IUnitOfWorkRepository repository)
         {
-			m_changedEntities.Add(new EntityRepositoryPair(entity, repository));
+            m_entities.Add(new EntityRepositoryPair(new UnitOfWorkEntity(entity, UnitOfWorkEntityState.Changed), repository));
         }
 
 		/// <summary>
@@ -58,7 +54,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="repository">Repository.</param>
 		public void RegisterRemoved(IAggregateRoot entity, IUnitOfWorkRepository repository)
         {
-			m_deletedEntities.Add(new EntityRepositoryPair(entity, repository));
+            m_entities.Add(new EntityRepositoryPair(new UnitOfWorkEntity(entity, UnitOfWorkEntityState.Removed), repository));
         }
 
 		/// <summary>
@@ -66,25 +62,45 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
         public virtual void Commit()
         {
-           foreach (var item in m_deletedEntities)
+           foreach (var item in m_entities.Where(e => e.Entity.State == UnitOfWorkEntityState.Removed))
             {
-				item.Repository.PersistDeletedItem(item.Entity);
+                item.Repository.PersistDeletedItem(item.Entity.Entity);
             }
 
-            foreach (var item in m_AddedEntities)
+           foreach (var item in m_entities.Where(e => e.Entity.State == UnitOfWorkEntityState.Added))
             {
-				item.Repository.PersistNewItem(item.Entity);
+				item.Repository.PersistNewItem(item.Entity.Entity);
             }
 
-            foreach (var item in m_changedEntities)
+            foreach (var item in m_entities.Where(e => e.Entity.State == UnitOfWorkEntityState.Changed))
             {
-				item.Repository.PersistUpdatedItem(item.Entity);
+                item.Repository.PersistUpdatedItem(item.Entity.Entity);
             }
-		
-			m_deletedEntities.Clear();
-			m_AddedEntities.Clear();
-			m_changedEntities.Clear();
+
+            m_entities.Clear();
         }
         #endregion
+
+
+        /// <summary>
+        /// Get the entity which is registered inside the unit of work.
+        /// </summary>
+        /// <param name="key">The entity key.</param>
+        /// <returns>
+        /// The entity instance or null if it is not register.
+        /// </returns>
+        public UnitOfWorkEntity Get(object key)
+        {
+            UnitOfWorkEntity result = null;
+
+            var pair = m_entities.FirstOrDefault(e => e.Entity.Entity.Key.Equals(key));
+
+            if (pair != null)
+            {
+                result = pair.Entity;
+            }
+
+            return result;
+        }
     }
 }
