@@ -108,12 +108,20 @@ namespace Skahal.Infrastructure.Framework.Domain
 
             if (((IEntity)base1).Key == null && ((IEntity)base2).Key == null)
             {
-                return true;
+                return object.ReferenceEquals(base1, base2);
             }
 
             if (((IEntity)base1).Key == null || ((IEntity)base2).Key == null)
             {
                 return false;
+            }
+
+            // Id value is the default one, so it can compare the entities by key.
+            var defaultIdValue = default(TId);
+
+            if (base1.Id.Equals(defaultIdValue) && base2.Id.Equals(defaultIdValue))
+            {
+                return object.ReferenceEquals(base1, base2);
             }
 
             return ((IEntity)base1).Key.Equals(((IEntity)base2).Key);

@@ -50,7 +50,92 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 			Assert.AreEqual (user.Key, actual[0].Key);
 		}
 
-		
+        [Test()]
+        public void FindAllAscending_NullFilter_ArgumentNullException()
+        {
+            ExceptionAssert.IsThrowing(new ArgumentNullException("filter"), () =>
+            {
+                m_target.FindAllAscending(0, 1, null, (o) => o.Key);
+            });
+        }
+
+        [Test()]
+        public void FindAllAscending_NullOrder_ArgumentNullException()
+        {
+            ExceptionAssert.IsThrowing(new ArgumentNullException("orderBy"), () =>
+            {
+                m_target.FindAllAscending<int>(0, 1, (o) => o.Name == null, null);
+            });
+        }
+
+        [Test()]
+        public void FindAllAscending_FilterAndOrder_EntitiesFilteredAndOrdered()
+        {
+            m_target.Add(new User() { Name = "B" });
+            m_target.Add(new User() { Name = "C" });
+            m_target.Add(new User() { Name = "A" });
+            m_unitOfWork.Commit();
+
+            var actual = m_target.FindAllAscending(0, 3, (f) => true, (o) => o.Name).ToList();
+            Assert.AreEqual(3, actual.Count);
+            Assert.AreEqual("A", actual[0].Name);
+            Assert.AreEqual("B", actual[1].Name);
+            Assert.AreEqual("C", actual[2].Name);
+
+            actual = m_target.FindAllAscending(1, 3, (f) => true, (o) => o.Name).ToList();
+            Assert.AreEqual(2, actual.Count);
+            Assert.AreEqual("B", actual[0].Name);
+            Assert.AreEqual("C", actual[1].Name);
+
+            actual = m_target.FindAllAscending(0, 2, (f) => true, (o) => o.Name).ToList();
+            Assert.AreEqual(2, actual.Count);
+            Assert.AreEqual("A", actual[0].Name);
+            Assert.AreEqual("B", actual[1].Name);
+        }
+
+        [Test()]
+        public void FindAllDescending_NullFilter_ArgumentNullException()
+        {
+            ExceptionAssert.IsThrowing(new ArgumentNullException("filter"), () =>
+            {
+                m_target.FindAllDescending(0, 1, null, (o) => o.Key);
+            });
+        }
+
+        [Test()]
+        public void FindAllDescending_NullOrder_ArgumentNullException()
+        {
+            ExceptionAssert.IsThrowing(new ArgumentNullException("orderBy"), () =>
+            {
+                m_target.FindAllDescending<int>(0, 1, (o) => o.Name == null, null);
+            });
+        }
+
+        [Test()]
+        public void FindAllDescending_FilterAndOrder_EntitiesFilteredAndOrdered()
+        {
+            m_target.Add(new User() { Name = "B" });
+            m_target.Add(new User() { Name = "C" });
+            m_target.Add(new User() { Name = "A" });
+            m_unitOfWork.Commit();
+
+            var actual = m_target.FindAllDescending(0, 3, (f) => true, (o) => o.Name).ToList();
+            Assert.AreEqual(3, actual.Count);
+            Assert.AreEqual("C", actual[0].Name);
+            Assert.AreEqual("B", actual[1].Name);
+            Assert.AreEqual("A", actual[2].Name);
+
+            actual = m_target.FindAllDescending(1, 3, (f) => true, (o) => o.Name).ToList();
+            Assert.AreEqual(2, actual.Count);
+            Assert.AreEqual("B", actual[0].Name);
+            Assert.AreEqual("A", actual[1].Name);
+
+            actual = m_target.FindAllDescending(0, 2, (f) => true, (o) => o.Name).ToList();
+            Assert.AreEqual(2, actual.Count);
+            Assert.AreEqual("C", actual[0].Name);
+            Assert.AreEqual("B", actual[1].Name);
+        }
+
 		[Test()]
 		public void CountAll_NullFilter_ArgumentNullException ()
 		{

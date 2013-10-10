@@ -55,6 +55,9 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="Commons\EventHandlerExtensionsTest.cs" />
+    <Compile Include="Domain\EntityWithIdBaseTest.cs" />
+    <Compile Include="Domain\EntityWithIdLongStub.cs" />
+    <Compile Include="Domain\EntityWithIdStringStub.cs" />
     <Compile Include="Net\Messaging\MessageConverterTest.cs" />
     <Compile Include="Net\Messaging\DisconnectedEventArgsTest.cs" />
     <Compile Include="Net\Messaging\MessageTest.cs" />

@@ -76,8 +76,49 @@ namespace Skahal.Infrastructure.Framework.Repositories
 			return Entities
 				.Where (e => filter.Compile()(e))
 				.OrderBy(e => e.Key)
-				.Skip(offset).Take(limit);
+				.Skip(offset)
+                .Take(limit);
 		}
+
+        /// <summary>
+        /// Finds all entities that matches the filter in a ascending order.
+        /// </summary>
+        /// <returns>The found entities.</returns>
+        /// <param name="offset">The offset to start the result.</param>
+        /// <param name="limit">The result count limit.</param>
+        /// <param name="filter">The entities filter.</param>
+        /// <param name="orderBy">The order.</param>
+        public override IEnumerable<TEntity> FindAllAscending<TOrderByKey>(int offset, int limit, Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TOrderByKey>> orderBy)
+        {
+            ExceptionHelper.ThrowIfNull("filter", filter);
+            ExceptionHelper.ThrowIfNull("orderBy", orderBy);
+
+            return Entities
+                .Where(e => filter.Compile()(e))
+                .OrderBy(e => orderBy.Compile()(e))
+                .Skip(offset)
+                .Take(limit);
+        }
+
+        /// <summary>
+        /// Finds all entities that matches the filter in a descending order.
+        /// </summary>
+        /// <returns>The found entities.</returns>
+        /// <param name="offset">The offset to start the result.</param>
+        /// <param name="limit">The result count limit.</param>
+        /// <param name="filter">The entities filter.</param>
+        /// <param name="orderBy">The order.</param>
+        public override IEnumerable<TEntity> FindAllDescending<TOrderByKey>(int offset, int limit, Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TOrderByKey>> orderBy)
+        {
+            ExceptionHelper.ThrowIfNull("filter", filter);
+            ExceptionHelper.ThrowIfNull("orderBy", orderBy);
+
+            return Entities
+                .Where(e => filter.Compile()(e))
+                .OrderByDescending(e => orderBy.Compile()(e))
+                .Skip(offset)
+                .Take(limit);
+        }
 
 		/// <summary>
 		/// Counts all entities that matches the filter.
@@ -137,6 +178,6 @@ namespace Skahal.Infrastructure.Framework.Repositories
 
 			Entities.Remove (old);
 		}
-		#endregion
-	}
+		#endregion       
+    }
 }

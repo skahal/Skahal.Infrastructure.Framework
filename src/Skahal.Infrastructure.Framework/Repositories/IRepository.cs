@@ -26,11 +26,31 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <summary>
 		/// Finds all entities that matches the filter.
 		/// </summary>
-		/// <returns>The found entities.</returns>
-		/// <param name="offset">Offset.</param>
-		/// <param name="limit">Limit.</param>
-		/// <param name="filter">Filter.</param>
+        /// <returns>The found entities.</returns>
+        /// <param name="offset">The offset to start the result.</param>
+        /// <param name="limit">The result count limit.</param>
+        /// <param name="filter">The entities filter.</param>
 		IEnumerable<TEntity> FindAll(int offset, int limit, Expression<Func<TEntity, bool>> filter);
+
+        /// <summary>
+		/// Finds all entities that matches the filter in a ascending order.
+		/// </summary>
+		/// <returns>The found entities.</returns>
+		/// <param name="offset">The offset to start the result.</param>
+		/// <param name="limit">The result count limit.</param>
+		/// <param name="filter">The entities filter.</param>
+        /// <param name="orderBy">The order.</param>
+        IEnumerable<TEntity> FindAllAscending<TOrderByKey>(int offset, int limit, Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TOrderByKey>> orderBy);
+
+        /// <summary>
+        /// Finds all entities that matches the filter in a descending order.
+        /// </summary>
+        /// <returns>The found entities.</returns>
+        /// <param name="offset">The offset to start the result.</param>
+        /// <param name="limit">The result count limit.</param>
+        /// <param name="filter">The entities filter.</param>
+        /// <param name="orderBy">The order.</param>
+        IEnumerable<TEntity> FindAllDescending<TOrderByKey>(int offset, int limit, Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TOrderByKey>> orderBy);
 
 		/// <summary>
 		/// Counts all entities that matches the filter.
