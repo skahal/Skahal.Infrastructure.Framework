@@ -6,7 +6,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 	/// <summary>
 	/// Entity repository pair.
 	/// </summary>
-	internal class EntityRepositoryPair
+	public class EntityRepositoryPair
 	{
 		#region Constructors
 		/// <summary>

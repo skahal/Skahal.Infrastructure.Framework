@@ -12,19 +12,20 @@ namespace Skahal.Infrastructure.Framework.Repositories
 	/// </summary>
 	public class MemoryUnitOfWork : IUnitOfWork
     {
-        #region Fields
-		private List<EntityRepositoryPair> m_entities;
-        #endregion
-
         #region Constructors
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Repositories.MemoryUnitOfWork&lt;TKey&gt;"/> class.
 		/// </summary>
         public MemoryUnitOfWork()
         {
-            m_entities = new List<EntityRepositoryPair>();
+            Entities = new List<EntityRepositoryPair>();
         }
         #endregion
+
+        #region Properties
+        protected IList<EntityRepositoryPair> Entities { get; private set; }
+        #endregion
+
 
         #region Methods
 		/// <summary>
@@ -32,9 +33,9 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <param name="repository">Repository.</param>
-		public void RegisterAdded(IAggregateRoot entity, IUnitOfWorkRepository repository)
+        public virtual void RegisterAdded(IAggregateRoot entity, IUnitOfWorkRepository repository)
         {
-            m_entities.Add(new EntityRepositoryPair(new UnitOfWorkEntity(entity, UnitOfWorkEntityState.Added), repository));
+            Entities.Add(new EntityRepositoryPair(new UnitOfWorkEntity(entity, UnitOfWorkEntityState.Added), repository));
 	    }
 
 		/// <summary>
@@ -42,9 +43,9 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <param name="repository">Repository.</param>
-		public void RegisterChanged(IAggregateRoot entity, IUnitOfWorkRepository repository)
+		public virtual void RegisterChanged(IAggregateRoot entity, IUnitOfWorkRepository repository)
         {
-            m_entities.Add(new EntityRepositoryPair(new UnitOfWorkEntity(entity, UnitOfWorkEntityState.Changed), repository));
+            Entities.Add(new EntityRepositoryPair(new UnitOfWorkEntity(entity, UnitOfWorkEntityState.Changed), repository));
         }
 
 		/// <summary>
@@ -52,9 +53,9 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <param name="repository">Repository.</param>
-		public void RegisterRemoved(IAggregateRoot entity, IUnitOfWorkRepository repository)
+        public virtual void RegisterRemoved(IAggregateRoot entity, IUnitOfWorkRepository repository)
         {
-            m_entities.Add(new EntityRepositoryPair(new UnitOfWorkEntity(entity, UnitOfWorkEntityState.Removed), repository));
+            Entities.Add(new EntityRepositoryPair(new UnitOfWorkEntity(entity, UnitOfWorkEntityState.Removed), repository));
         }
 
 		/// <summary>
@@ -62,22 +63,22 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// </summary>
         public virtual void Commit()
         {
-           foreach (var item in m_entities.Where(e => e.Entity.State == UnitOfWorkEntityState.Removed))
+           foreach (var item in Entities.Where(e => e.Entity.State == UnitOfWorkEntityState.Removed))
             {
                 item.Repository.PersistDeletedItem(item.Entity.Entity);
             }
 
-           foreach (var item in m_entities.Where(e => e.Entity.State == UnitOfWorkEntityState.Added))
+           foreach (var item in Entities.Where(e => e.Entity.State == UnitOfWorkEntityState.Added))
             {
 				item.Repository.PersistNewItem(item.Entity.Entity);
             }
 
-            foreach (var item in m_entities.Where(e => e.Entity.State == UnitOfWorkEntityState.Changed))
+            foreach (var item in Entities.Where(e => e.Entity.State == UnitOfWorkEntityState.Changed))
             {
                 item.Repository.PersistUpdatedItem(item.Entity.Entity);
             }
 
-            m_entities.Clear();
+            Entities.Clear();
         }
         #endregion
 
@@ -93,7 +94,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
         {
             UnitOfWorkEntity result = null;
 
-            var pair = m_entities.FirstOrDefault(e => e.Entity.Entity.Key.Equals(key));
+            var pair = Entities.FirstOrDefault(e => e.Entity.Entity.Key.Equals(key));
 
             if (pair != null)
             {
