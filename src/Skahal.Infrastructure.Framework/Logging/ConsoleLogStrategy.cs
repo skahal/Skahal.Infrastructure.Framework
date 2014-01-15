@@ -1,7 +1,6 @@
 using System;
-using Skahal.Infrastructure.Framework.Logging;
 
-namespace Skahal.Infrastructure.Framework
+namespace Skahal.Infrastructure.Framework.Logging
 {
 	/// <summary>
 	/// A log strategy that send the messages to default system console.
