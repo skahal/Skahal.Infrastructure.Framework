@@ -55,7 +55,7 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 		}
 
 		[Test()]
-		public void Commit_EntitiesToAddChangeAndDelte_RightCommit ()
+		public void Commit_EntitiesToAddChangeAndDelete_RightCommit ()
 		{
 			var target = new MemoryUnitOfWork ();
 
@@ -76,6 +76,27 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 
 			repository.VerifyAllExpectations ();
 		}
+
+        [Test()]
+        public void Rollback_EntitiesToAddChangeAndDelete_Undo()
+        {
+            var target = new MemoryUnitOfWork();
+
+            var userToDelete = new User("1");
+            var userToAdd = new User("2");
+            var userToUpdate = new User("3");
+
+            var repository = MockRepository.GenerateStrictMock<IUnitOfWorkRepository>();
+
+            target.RegisterRemoved(userToDelete, repository);
+            target.RegisterAdded(userToAdd, repository);
+            target.RegisterChanged(userToUpdate, repository);
+
+            target.Rollback();
+            target.Commit();            
+
+            repository.VerifyAllExpectations();
+        }
 	}
 }
 

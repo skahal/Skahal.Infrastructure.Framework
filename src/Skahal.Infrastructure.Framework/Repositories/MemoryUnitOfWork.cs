@@ -80,6 +80,14 @@ namespace Skahal.Infrastructure.Framework.Repositories
 
             Entities.Clear();
         }
+
+        /// <summary>
+        /// Undo changes made after the latest commit.
+        /// </summary>
+        public void Rollback()
+        {
+            Entities.Clear();
+        }
         #endregion
 
 
@@ -102,6 +110,6 @@ namespace Skahal.Infrastructure.Framework.Repositories
             }
 
             return result;
-        }
+        }        
     }
 }

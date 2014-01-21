@@ -36,6 +36,11 @@ namespace Skahal.Infrastructure.Framework.Repositories
         void Commit();
 
         /// <summary>
+        /// Undo changes made after the latest commit.
+        /// </summary>
+        void Rollback();
+
+        /// <summary>
         /// Get the entity which is registered inside the unit of work.
         /// </summary>
         /// <param name="key">The entity key.</param>
