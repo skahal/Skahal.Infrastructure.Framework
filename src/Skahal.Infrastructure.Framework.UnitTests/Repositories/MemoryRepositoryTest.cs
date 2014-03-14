@@ -27,14 +27,6 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 
 		#region Tests
 		[Test()]
-		public void FindAll_NullFilter_ArgumentNullException ()
-		{
-			ExceptionAssert.IsThrowing (new ArgumentNullException("filter"), () => {
-				m_target.FindAll (null);
-			});
-		}
-
-		[Test()]
 		public void FindAll_Filter_EntitiesFiltered ()
 		{
 			m_target.Add(new User() {} );
@@ -48,16 +40,7 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
 			var actual = m_target.FindAll (f => f.Key == user.Key).ToList();
 			Assert.AreEqual (1, actual.Count);
 			Assert.AreEqual (user.Key, actual[0].Key);
-		}
-
-        [Test()]
-        public void FindAllAscending_NullFilter_ArgumentNullException()
-        {
-            ExceptionAssert.IsThrowing(new ArgumentNullException("filter"), () =>
-            {
-                m_target.FindAllAscending(0, 1, null, (o) => o.Key);
-            });
-        }
+		}  
 
         [Test()]
         public void FindAllAscending_NullOrder_ArgumentNullException()
@@ -94,15 +77,6 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
         }
 
         [Test()]
-        public void FindAllDescending_NullFilter_ArgumentNullException()
-        {
-            ExceptionAssert.IsThrowing(new ArgumentNullException("filter"), () =>
-            {
-                m_target.FindAllDescending(0, 1, null, (o) => o.Key);
-            });
-        }
-
-        [Test()]
         public void FindAllDescending_NullOrder_ArgumentNullException()
         {
             ExceptionAssert.IsThrowing(new ArgumentNullException("orderBy"), () =>
@@ -135,14 +109,6 @@ namespace Skahal.Infrastructure.Framework.UnitTests.Repositories
             Assert.AreEqual("C", actual[0].Name);
             Assert.AreEqual("B", actual[1].Name);
         }
-
-		[Test()]
-		public void CountAll_NullFilter_ArgumentNullException ()
-		{
-			ExceptionAssert.IsThrowing (new ArgumentNullException("filter"), () => {
-				m_target.CountAll (null);
-			});
-		}
 
 		[Test()]
 		public void CountAll_Filter_EntitiesFiltered ()

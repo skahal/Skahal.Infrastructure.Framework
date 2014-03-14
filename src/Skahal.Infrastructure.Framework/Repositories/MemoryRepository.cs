@@ -71,10 +71,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="filter">Filter.</param>
 		public override IEnumerable<TEntity> FindAll (int offset, int limit, Expression<Func<TEntity, bool>> filter)
 		{
-			ExceptionHelper.ThrowIfNull ("filter", filter);
-
-			return Entities
-				.Where (e => filter.Compile()(e))
+			return InitializeQuery(filter)
 				.OrderBy(e => e.Key)
 				.Skip(offset)
                 .Take(limit);
@@ -89,12 +86,10 @@ namespace Skahal.Infrastructure.Framework.Repositories
         /// <param name="filter">The entities filter.</param>
         /// <param name="orderBy">The order.</param>
         public override IEnumerable<TEntity> FindAllAscending<TOrderByKey>(int offset, int limit, Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TOrderByKey>> orderBy)
-        {
-            ExceptionHelper.ThrowIfNull("filter", filter);
+        {            
             ExceptionHelper.ThrowIfNull("orderBy", orderBy);
 
-            return Entities
-                .Where(e => filter.Compile()(e))
+            return InitializeQuery(filter)
                 .OrderBy(e => orderBy.Compile()(e))
                 .Skip(offset)
                 .Take(limit);
@@ -109,12 +104,10 @@ namespace Skahal.Infrastructure.Framework.Repositories
         /// <param name="filter">The entities filter.</param>
         /// <param name="orderBy">The order.</param>
         public override IEnumerable<TEntity> FindAllDescending<TOrderByKey>(int offset, int limit, Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TOrderByKey>> orderBy)
-        {
-            ExceptionHelper.ThrowIfNull("filter", filter);
+        {            
             ExceptionHelper.ThrowIfNull("orderBy", orderBy);
 
-            return Entities
-                .Where(e => filter.Compile()(e))
+            return InitializeQuery(filter)
                 .OrderByDescending(e => orderBy.Compile()(e))
                 .Skip(offset)
                 .Take(limit);
@@ -127,8 +120,14 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		/// <param name="filter">Filter.</param>
         public override long CountAll(Expression<Func<TEntity, bool>> filter)
 		{
-			ExceptionHelper.ThrowIfNull ("filter", filter);
-			return Entities.Count (e => filter.Compile()(e));
+            if (filter == null)
+            {
+                return Entities.Count();
+            }
+            else
+            {
+                return Entities.Count(e => filter.Compile()(e));
+            }
 		}
 
 		/// <summary>
@@ -178,6 +177,18 @@ namespace Skahal.Infrastructure.Framework.Repositories
 
 			Entities.Remove (old);
 		}
+
+        private IEnumerable<TEntity> InitializeQuery(Expression<Func<TEntity, bool>> filter)
+        {
+            if (filter == null)
+            {
+                return Entities;
+            }
+            else
+            {
+                return Entities.Where(e => filter.Compile()(e));
+            }
+        }
 		#endregion       
     }
 }
