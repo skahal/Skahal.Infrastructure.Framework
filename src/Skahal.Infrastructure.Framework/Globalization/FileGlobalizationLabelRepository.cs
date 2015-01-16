@@ -1,28 +1,26 @@
 using System;
-using Skahal.Infrastructure.Framework.Globalization;
-using System.IO.Abstractions;
 
 namespace Skahal.Infrastructure.Framework.Globalization
 {
-	/// <summary>
-	/// A TextGlobalizationLabelRepositoryBase using file.
-	/// </summary>
+    /// <summary>
+    /// A TextGlobalizationLabelRepositoryBase using file.
+    /// </summary>
     public class FileGlobalizationLabelRepository : TextGlobalizationLabelRepositoryBase
-	{
-		#region Fields
-		private string m_filesDirectory;
-		#endregion
+    {
+        #region Fields
+        private string m_filesDirectory;
+        #endregion
 
-		#region Constructors
-		/// <summary>
-		/// Initializes a new instance of the <see cref="FileGlobalizationLabelRepository"/> class.
-		/// </summary>
-		/// <param name="filesDirectory">The files directory.</param>
-		public FileGlobalizationLabelRepository (string filesDirectory)
-		{
-			m_filesDirectory = filesDirectory;
-		}
-		#endregion
+        #region Constructors
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileGlobalizationLabelRepository"/> class.
+        /// </summary>
+        /// <param name="filesDirectory">The files directory.</param>
+        public FileGlobalizationLabelRepository(string filesDirectory)
+        {
+            m_filesDirectory = filesDirectory;
+        }
+        #endregion
 
         #region implemented abstract members of TextGlobalizationLabelRepositoryBase
         /// <summary>
@@ -30,11 +28,11 @@ namespace Skahal.Infrastructure.Framework.Globalization
         /// </summary>
         /// <returns>The culture text.</returns>
         /// <param name="cultureName">Culture name.</param>
-        protected internal override string GetCultureText (string cultureName)
+        protected internal override string GetCultureText(string cultureName)
         {
-            throw new NotImplementedException ();
+            throw new NotImplementedException();
         }
 
         #endregion
-	}
+    }
 }
