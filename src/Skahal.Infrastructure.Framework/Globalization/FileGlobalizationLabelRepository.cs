@@ -7,7 +7,7 @@ namespace Skahal.Infrastructure.Framework.Globalization
 	/// <summary>
 	/// A TextGlobalizationLabelRepositoryBase using file.
 	/// </summary>
-	public class FileGlobalizationLabelRepository : TextGlobalizationLabelRepositoryBase
+    public class FileGlobalizationLabelRepository : TextGlobalizationLabelRepositoryBase
 	{
 		#region Fields
 		private string m_filesDirectory;
@@ -24,16 +24,17 @@ namespace Skahal.Infrastructure.Framework.Globalization
 		}
 		#endregion
 
-		#region implemented abstract members of TextGlobalizationLabelRepositoryBase
-		/// <summary>
-		/// Gets the culture text.
-		/// </summary>
-		/// <returns>The culture text.</returns>
-		/// <param name="cultureName">Culture name.</param>
-		protected internal override string GetCultureText (string cultureName)
-		{
-			throw new NotImplementedException ();
-		}
-		#endregion
+        #region implemented abstract members of TextGlobalizationLabelRepositoryBase
+        /// <summary>
+        /// Gets the culture text.
+        /// </summary>
+        /// <returns>The culture text.</returns>
+        /// <param name="cultureName">Culture name.</param>
+        protected internal override string GetCultureText (string cultureName)
+        {
+            throw new NotImplementedException ();
+        }
+
+        #endregion
 	}
 }

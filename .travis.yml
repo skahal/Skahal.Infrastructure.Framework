@@ -5,5 +5,5 @@ install:
   - mozroots --import --sync
  
 script:
-  - xbuild ./src/Skahal.Infrastructure.Framework.sln /property:"Configuration=OSX;Platform=Any CPU"
+  - xbuild ./src/Skahal.Infrastructure.Framework.sln /property:"Configuration=OSX;Platform=Any CPU" /p:"DefineConstants=TRAVIS_CI"
   - nunit-console ./src/Skahal.Infrastructure.Framework.UnitTests/bin/OSX/Skahal.Infrastructure.Framework.UnitTests.dll

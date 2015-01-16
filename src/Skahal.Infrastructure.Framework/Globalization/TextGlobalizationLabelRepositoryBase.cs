@@ -58,7 +58,7 @@ namespace Skahal.Infrastructure.Framework.Globalization
 		/// </summary>
 		/// <returns>The culture text.</returns>
 		/// <param name="cultureName">Culture name.</param>
-		internal protected abstract string GetCultureText (string cultureName);
+        protected internal abstract string GetCultureText (string cultureName);
 		#endregion
 	}
 }
