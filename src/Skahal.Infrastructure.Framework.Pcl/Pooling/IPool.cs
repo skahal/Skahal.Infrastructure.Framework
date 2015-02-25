@@ -1,6 +1,6 @@
 using System;
 
-namespace Skahal.Infrastructure.Framework.Pooling
+namespace Skahal.Infrastructure.Framework.PCL.Pooling
 {
 	/// <summary>
 	/// Defines an interface for a pool.

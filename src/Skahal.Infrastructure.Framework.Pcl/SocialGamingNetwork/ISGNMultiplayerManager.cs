@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// Defines a interface for a multiplayer manager.

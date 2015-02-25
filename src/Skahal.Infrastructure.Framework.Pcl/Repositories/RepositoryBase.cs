@@ -1,10 +1,10 @@
-using Skahal.Infrastructure.Framework.Domain;
+using Skahal.Infrastructure.Framework.PCL.Domain;
 using System.Collections.Generic;
 using System;
 using HelperSharp.PCL;
 using System.Linq.Expressions;
 
-namespace Skahal.Infrastructure.Framework.Repositories
+namespace Skahal.Infrastructure.Framework.PCL.Repositories
 {
 	/// <summary>
 	/// A base class for repositories.
@@ -18,7 +18,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 
         #region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Repositories.RepositoryBase&lt;TEntity, TKey&gt;"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Repositories.RepositoryBase&lt;TEntity, TKey&gt;"/> class.
 		/// </summary>
         protected RepositoryBase() 
             : this(null)
@@ -26,7 +26,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
         }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Repositories.RepositoryBase&lt;TEntity, TKey&gt;"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Repositories.RepositoryBase&lt;TEntity, TKey&gt;"/> class.
 		/// </summary>
 		/// <param name="unitOfWork">Unit of work.</param>
 		protected RepositoryBase(IUnitOfWork unitOfWork)
@@ -114,7 +114,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
         
 
 		/// <summary>
-		/// Gets or sets the <see cref="Skahal.Infrastructure.Framework.Repositories.RepositoryBase&lt;TEntity, TKey&gt;"/> with the specified key.
+		/// Gets or sets the <see cref="Skahal.Infrastructure.Framework.PCL.Repositories.RepositoryBase&lt;TEntity, TKey&gt;"/> with the specified key.
 		/// </summary>
 		/// <param name="key">Key.</param>
 		public TEntity this[object key]

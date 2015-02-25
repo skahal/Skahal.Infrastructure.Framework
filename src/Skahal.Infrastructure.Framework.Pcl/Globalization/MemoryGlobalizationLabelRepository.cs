@@ -1,7 +1,7 @@
 using System;
-using Skahal.Infrastructure.Framework.Repositories;
+using Skahal.Infrastructure.Framework.PCL.Repositories;
 
-namespace Skahal.Infrastructure.Framework.Globalization
+namespace Skahal.Infrastructure.Framework.PCL.Globalization
 {
 	/// <summary>
 	/// An in-memory globalization label repository.
@@ -11,7 +11,7 @@ namespace Skahal.Infrastructure.Framework.Globalization
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.Globalization.MemoryGlobalizationLabelRepository"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.Globalization.MemoryGlobalizationLabelRepository"/> class.
 		/// </summary>
 		public MemoryGlobalizationLabelRepository () : base((l) => { return Guid.NewGuid().ToString(); })
 		{

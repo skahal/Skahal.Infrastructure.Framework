@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// Achievements refreshed event arguments.
@@ -12,7 +12,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.AchievementsRefreshedEventArgs"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.AchievementsRefreshedEventArgs"/> class.
 		/// </summary>
 		/// <param name="achievements">Achievements.</param>
 		public AchievementsRefreshedEventArgs(SGNAchievement[] achievements)

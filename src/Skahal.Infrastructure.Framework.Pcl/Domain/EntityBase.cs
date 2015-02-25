@@ -6,7 +6,7 @@ using System.Text;
 using System.Diagnostics;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Domain
+namespace Skahal.Infrastructure.Framework.PCL.Domain
 {
 	/// <summary>
 	/// A domain entity base class.
@@ -16,14 +16,14 @@ namespace Skahal.Infrastructure.Framework.Domain
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Domain.EntityBase&lt;TKey&gt;"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Domain.EntityBase&lt;TKey&gt;"/> class.
 		/// </summary>
 		protected EntityBase() 
 		{
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Domain.EntityBase&lt;TKey&gt;"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Domain.EntityBase&lt;TKey&gt;"/> class.
 		/// </summary>
 		/// <param name="key">Key.</param>
 		protected EntityBase(object key)

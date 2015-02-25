@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
-using Skahal.Infrastructure.Framework.Logging;
-using Skahal.Infrastructure.Framework.Repositories;
+using Skahal.Infrastructure.Framework.PCL.Logging;
+using Skahal.Infrastructure.Framework.PCL.Repositories;
 
-namespace Skahal.Infrastructure.Framework.People
+namespace Skahal.Infrastructure.Framework.PCL.People
 {
 	/// <summary>
 	/// Infrastructure framework user service.

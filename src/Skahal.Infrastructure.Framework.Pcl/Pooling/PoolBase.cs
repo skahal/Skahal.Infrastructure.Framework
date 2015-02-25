@@ -1,6 +1,6 @@
 using System;
 
-namespace Skahal.Infrastructure.Framework.Pooling
+namespace Skahal.Infrastructure.Framework.PCL.Pooling
 {
 	/// <summary>
 	/// A Pool base class.
@@ -9,7 +9,7 @@ namespace Skahal.Infrastructure.Framework.Pooling
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Pooling.PoolBase"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Pooling.PoolBase"/> class.
 		/// </summary>
 		/// <param name="name">Name.</param>
 		protected PoolBase (string name)

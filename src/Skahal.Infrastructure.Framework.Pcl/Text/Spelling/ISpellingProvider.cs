@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Globalization;
 
-namespace Skahal.Infrastructure.Framework.Text.Spelling
+namespace Skahal.Infrastructure.Framework.PCL.Text.Spelling
 {
 	/// <summary>
 	/// Defines a spelling provider.

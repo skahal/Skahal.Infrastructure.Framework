@@ -3,7 +3,7 @@ using System;
 using System.Text;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Text
+namespace Skahal.Infrastructure.Framework.PCL.Text
 {
 	/// <summary>
 	/// Extensions methods for strings.

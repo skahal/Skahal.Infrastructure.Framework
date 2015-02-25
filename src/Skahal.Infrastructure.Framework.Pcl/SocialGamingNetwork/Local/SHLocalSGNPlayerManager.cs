@@ -1,12 +1,12 @@
 #region Usings
 using System;
-using Skahal.Infrastructure.Framework.Commons;
-using Skahal.Infrastructure.Framework.People;
+using Skahal.Infrastructure.Framework.PCL.Commons;
+using Skahal.Infrastructure.Framework.PCL.People;
 
 
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork.Local
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.Local
 {
 	/// <summary>
 	/// A local SGN player manager.

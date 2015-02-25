@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Net.Messaging
+namespace Skahal.Infrastructure.Framework.PCL.Net.Messaging
 {
 	#region Enums
 	/// <summary>

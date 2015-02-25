@@ -1,6 +1,6 @@
 using System;
 
-namespace Skahal.Infrastructure.Framework.Logging
+namespace Skahal.Infrastructure.Framework.PCL.Logging
 {
 	/// <summary>
 	/// Represents a log message.
@@ -9,7 +9,7 @@ namespace Skahal.Infrastructure.Framework.Logging
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Logging.LogMessage"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Logging.LogMessage"/> class.
 		/// </summary>
 		/// <param name="message">Message.</param>
 		/// <param name="arguments">Arguments.</param>
@@ -20,7 +20,7 @@ namespace Skahal.Infrastructure.Framework.Logging
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Logging.LogMessage"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Logging.LogMessage"/> class.
 		/// </summary>
 		/// <param name="logLevel">Log level.</param>
 		/// <param name="message">Message.</param>

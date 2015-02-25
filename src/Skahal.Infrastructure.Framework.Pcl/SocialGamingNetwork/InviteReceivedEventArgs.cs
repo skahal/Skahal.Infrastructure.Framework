@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// Invite received event arguments.

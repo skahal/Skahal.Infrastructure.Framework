@@ -5,7 +5,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Commons
+namespace Skahal.Infrastructure.Framework.PCL.Commons
 {
 	/// <summary>
 	/// A basic progress indicator.
@@ -27,7 +27,7 @@ namespace Skahal.Infrastructure.Framework.Commons
 		
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Commons.ProgressIndicator"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Commons.ProgressIndicator"/> class.
 		/// </summary>
 		public ProgressIndicator()
 		{

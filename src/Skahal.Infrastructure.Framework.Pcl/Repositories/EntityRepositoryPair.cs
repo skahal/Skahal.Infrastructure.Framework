@@ -1,7 +1,7 @@
 using System;
-using Skahal.Infrastructure.Framework.Domain;
+using Skahal.Infrastructure.Framework.PCL.Domain;
 
-namespace Skahal.Infrastructure.Framework.Repositories
+namespace Skahal.Infrastructure.Framework.PCL.Repositories
 {
 	/// <summary>
 	/// Entity repository pair.
@@ -11,7 +11,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.Repositories.EntityRepositoryPair&lt;TKey&gt;"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.Repositories.EntityRepositoryPair&lt;TKey&gt;"/> class.
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <param name="repository">Repository.</param>

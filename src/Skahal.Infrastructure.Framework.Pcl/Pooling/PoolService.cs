@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Skahal.Infrastructure.Framework.Commons;
+using Skahal.Infrastructure.Framework.PCL.Commons;
 
-namespace Skahal.Infrastructure.Framework.Pooling
+namespace Skahal.Infrastructure.Framework.PCL.Pooling
 {
 	/// <summary>
 	/// Pool service.

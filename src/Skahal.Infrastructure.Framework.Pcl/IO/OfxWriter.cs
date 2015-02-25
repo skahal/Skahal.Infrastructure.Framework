@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml;
 
-namespace Skahal.Infrastructure.Framework.IO
+namespace Skahal.Infrastructure.Framework.PCL.IO
 {
 	/// <summary>
 	/// Ofx writer.

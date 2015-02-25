@@ -1,12 +1,12 @@
 #region Usings
 using System;
-using Skahal.Infrastructure.Framework.Logging;
-using Skahal.Infrastructure.Framework.Commons;
-using Skahal.Infrastructure.Framework.People;
-using Skahal.Infrastructure.Framework.Globalization;
+using Skahal.Infrastructure.Framework.PCL.Logging;
+using Skahal.Infrastructure.Framework.PCL.Commons;
+using Skahal.Infrastructure.Framework.PCL.People;
+using Skahal.Infrastructure.Framework.PCL.Globalization;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Configuration
+namespace Skahal.Infrastructure.Framework.PCL.Configuration
 {
 	/// <summary>
 	/// The framework bootstrapper.

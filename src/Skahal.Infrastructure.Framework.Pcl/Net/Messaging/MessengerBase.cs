@@ -1,13 +1,13 @@
 #region Usings
 using System;
-using Skahal.Infrastructure.Framework.Commons;
+using Skahal.Infrastructure.Framework.PCL.Commons;
 using System.Collections.Generic;
-using Skahal.Infrastructure.Framework.Logging;
+using Skahal.Infrastructure.Framework.PCL.Logging;
 
 
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Net.Messaging
+namespace Skahal.Infrastructure.Framework.PCL.Net.Messaging
 {
 	/// <summary>
 	/// The base class for IMessenger's
@@ -56,7 +56,7 @@ namespace Skahal.Infrastructure.Framework.Net.Messaging
 		
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Net.Messaging.MessengerBase"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Net.Messaging.MessengerBase"/> class.
 		/// </summary>
 		protected MessengerBase ()
 		{

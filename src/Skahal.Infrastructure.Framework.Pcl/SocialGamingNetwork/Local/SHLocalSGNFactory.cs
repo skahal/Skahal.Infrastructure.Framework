@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork.Local
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.Local
 {
 	/// <summary>
 	/// A local SGN factory.

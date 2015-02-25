@@ -1,9 +1,9 @@
 #region Usings
 using System.Collections;
-using Skahal.Infrastructure.Framework.Net.Messaging;
+using Skahal.Infrastructure.Framework.PCL.Net.Messaging;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Net.Messaging
+namespace Skahal.Infrastructure.Framework.PCL.Net.Messaging
 {
 	/// <summary>
 	/// A message converter helper.

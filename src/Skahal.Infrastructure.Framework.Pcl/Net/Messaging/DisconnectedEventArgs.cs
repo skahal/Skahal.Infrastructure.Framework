@@ -2,7 +2,7 @@
 using System.Collections;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Net.Messaging
+namespace Skahal.Infrastructure.Framework.PCL.Net.Messaging
 {
 	/// <summary>
 	/// Disconnected event arguments.
@@ -12,7 +12,7 @@ namespace Skahal.Infrastructure.Framework.Net.Messaging
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.Net.Messaging.DisconnectedEventArgs"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.Net.Messaging.DisconnectedEventArgs"/> class.
 		/// </summary>
 		/// <param name="reason">Reason.</param>
 		public DisconnectedEventArgs (DisconnectionReason reason)

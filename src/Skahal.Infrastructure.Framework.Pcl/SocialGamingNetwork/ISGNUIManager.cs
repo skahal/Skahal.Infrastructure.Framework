@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// Defines a interface for am UI manager.
@@ -12,7 +12,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		#region Properties
 		/// <summary>
 		/// Gets or sets a value indicating whether this
-		/// <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.ISGNUIManager"/> allow notifications.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.ISGNUIManager"/> allow notifications.
 		/// </summary>
 		/// <value><c>true</c> if allow notifications; otherwise, <c>false</c>.</value>
 		bool AllowNotifications

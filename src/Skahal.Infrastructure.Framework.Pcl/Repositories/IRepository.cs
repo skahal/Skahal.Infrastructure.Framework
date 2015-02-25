@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Skahal.Infrastructure.Framework.Domain;
+using Skahal.Infrastructure.Framework.PCL.Domain;
 using System;
 using System.Linq.Expressions;
 
-namespace Skahal.Infrastructure.Framework.Repositories
+namespace Skahal.Infrastructure.Framework.PCL.Repositories
 {
 	/// <summary>
 	/// Defines the interface of a repository entity.
@@ -66,7 +66,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		void Add(TEntity item);
 
 		/// <summary>
-		/// Gets or sets the <see cref="Skahal.Infrastructure.Framework.Repositories.IRepository&lt;TEntity, TKey&gt;"/> with the specified key.
+		/// Gets or sets the <see cref="Skahal.Infrastructure.Framework.PCL.Repositories.IRepository&lt;TEntity, TKey&gt;"/> with the specified key.
 		/// </summary>
 		/// <param name="key">Key.</param>
 		TEntity this[object key] { get; set; }

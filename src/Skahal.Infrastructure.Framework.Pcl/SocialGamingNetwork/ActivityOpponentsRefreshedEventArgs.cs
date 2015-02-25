@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// Activity opponents refreshed event arguments.
@@ -12,7 +12,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.ActivityOpponentsRefreshedEventArgs"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.ActivityOpponentsRefreshedEventArgs"/> class.
 		/// </summary>
 		/// <param name="activityOpponentsCount">Activity opponents count.</param>
 		public ActivityOpponentsRefreshedEventArgs(int activityOpponentsCount)

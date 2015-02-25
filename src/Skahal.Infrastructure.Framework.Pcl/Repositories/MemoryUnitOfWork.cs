@@ -1,10 +1,10 @@
 ﻿#region Usings
 using System.Collections.Generic;
 using System.Linq;
-using Skahal.Infrastructure.Framework.Domain;
+using Skahal.Infrastructure.Framework.PCL.Domain;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Repositories
+namespace Skahal.Infrastructure.Framework.PCL.Repositories
 {
     /// <summary>
     /// Defines an in memory unit of work.
@@ -13,7 +13,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
     {
         #region Constructors
         /// <summary>
-        /// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Repositories.MemoryUnitOfWork&lt;TKey&gt;"/> class.
+        /// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Repositories.MemoryUnitOfWork&lt;TKey&gt;"/> class.
         /// </summary>
         public MemoryUnitOfWork()
         {

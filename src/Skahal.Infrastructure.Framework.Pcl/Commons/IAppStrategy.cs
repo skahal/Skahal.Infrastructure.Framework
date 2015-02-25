@@ -1,6 +1,6 @@
 using System;
 
-namespace Skahal.Infrastructure.Framework.Commons
+namespace Skahal.Infrastructure.Framework.PCL.Commons
 {
 	/// <summary>
 	/// Defines an interface for a strategy to expose platform specific app events and operations.

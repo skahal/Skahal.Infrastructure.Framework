@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Text
+namespace Skahal.Infrastructure.Framework.PCL.Text
 {
     /// <summary>
     /// Representa uma chave de binding dentro de um texto da DynamicTextBuilder.

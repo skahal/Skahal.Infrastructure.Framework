@@ -1,7 +1,7 @@
 using System;
 using HelperSharp.PCL;
 
-namespace Skahal.Infrastructure.Framework.Commons
+namespace Skahal.Infrastructure.Framework.PCL.Commons
 {
 	/// <summary>
 	/// Represents the application current running.

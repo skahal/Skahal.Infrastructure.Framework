@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Skahal.Infrastructure.Framework.Logging
+namespace Skahal.Infrastructure.Framework.PCL.Logging
 {
 	/// <summary>
 	/// A buffer log strategy used for keep the logs until a real log strategy be setted.

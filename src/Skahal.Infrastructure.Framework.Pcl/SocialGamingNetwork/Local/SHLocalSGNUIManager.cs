@@ -1,10 +1,10 @@
 #region Usings
 using System;
-using Skahal.Infrastructure.Framework.Commons;
+using Skahal.Infrastructure.Framework.PCL.Commons;
 using System.Collections.Generic;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork.Local
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.Local
 {
 	/// <summary>
 	/// A local SGN UI manager.
@@ -35,7 +35,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork.Local
 		}
 		
 		/// <summary>
-		/// Gets or sets a value indicating whether this <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.Local.SHLocalSGNUIManager"/>
+		/// Gets or sets a value indicating whether this <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.Local.SHLocalSGNUIManager"/>
 		/// allow notifications.
 		/// </summary>
 		/// <value>

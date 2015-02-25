@@ -2,12 +2,12 @@
 using System;
 using System.Globalization;
 using System.Linq;
-using Skahal.Infrastructure.Framework.People;
-using Skahal.Infrastructure.Framework.Logging;
-using Skahal.Infrastructure.Framework.Repositories;
+using Skahal.Infrastructure.Framework.PCL.People;
+using Skahal.Infrastructure.Framework.PCL.Logging;
+using Skahal.Infrastructure.Framework.PCL.Repositories;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Globalization
+namespace Skahal.Infrastructure.Framework.PCL.Globalization
 {
 	/// <summary>
 	/// Globalization service.

@@ -5,7 +5,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Domain
+namespace Skahal.Infrastructure.Framework.PCL.Domain
 {
 	/// <summary>
 	/// Represents an excetion occurent on domain layer.
@@ -14,7 +14,7 @@ namespace Skahal.Infrastructure.Framework.Domain
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Domain.DomainException"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Domain.DomainException"/> class.
 		/// </summary>
 		/// <param name="message">Message.</param>
 		public DomainException (string message) : base(message)
@@ -22,7 +22,7 @@ namespace Skahal.Infrastructure.Framework.Domain
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Domain.DomainException"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Domain.DomainException"/> class.
 		/// </summary>
 		/// <param name="message">Message.</param>
 		/// <param name="innerException">Inner exception.</param>

@@ -2,7 +2,7 @@
 //  Copyright (c) 2011 Skahal Studios
 using System;
 
-namespace Skahal.Infrastructure.Framework.IO
+namespace Skahal.Infrastructure.Framework.PCL.IO
 {
 	/// <summary>
 	/// Defines an interface for an OFX transaction.

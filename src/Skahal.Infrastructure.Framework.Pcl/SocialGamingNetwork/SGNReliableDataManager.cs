@@ -1,15 +1,15 @@
 #region Usings
 using System;
 using System.Collections.Generic;
-using Skahal.Infrastructure.Framework.Commons;
+using Skahal.Infrastructure.Framework.PCL.Commons;
 using System.Text;
-using Skahal.Infrastructure.Framework.Logging;
-using Skahal.Infrastructure.Framework.People;
+using Skahal.Infrastructure.Framework.PCL.Logging;
+using Skahal.Infrastructure.Framework.PCL.People;
 
 
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// A manager for SGN (Social Game Network) that keeps data reliable and 

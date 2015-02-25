@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// Defines a player.
@@ -11,7 +11,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNPlayer"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNPlayer"/> class.
 		/// </summary>
 		/// <param name="id">Identifier.</param>
 		public SGNPlayer(string id)
@@ -36,7 +36,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		
 		#region Methods
 		/// <summary>
-		/// Serves as a hash function for a <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNPlayer"/> object.
+		/// Serves as a hash function for a <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNPlayer"/> object.
 		/// </summary>
 		/// <returns>A hash code for this instance that is suitable for use in hashing algorithms and data structures such as a hash table.</returns>
 		public override int GetHashCode()
@@ -45,9 +45,9 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		}
 
 		/// <summary>
-		/// Returns a <see cref="System.String"/> that represents the current <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNPlayer"/>.
+		/// Returns a <see cref="System.String"/> that represents the current <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNPlayer"/>.
 		/// </summary>
-		/// <returns>A <see cref="System.String"/> that represents the current <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNPlayer"/>.</returns>
+		/// <returns>A <see cref="System.String"/> that represents the current <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNPlayer"/>.</returns>
 		public override string ToString()
 		{
 			return string.Format("[SGNPlayer: ID={0}, Name={1}]", ID, Name);

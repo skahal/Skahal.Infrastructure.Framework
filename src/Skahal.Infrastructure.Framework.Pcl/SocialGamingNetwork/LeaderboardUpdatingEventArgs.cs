@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// Leaderboard updating event arguments.
@@ -12,7 +12,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.LeaderboardUpdatingEventArgs"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.LeaderboardUpdatingEventArgs"/> class.
 		/// </summary>
 		/// <param name="leaderboard">Leaderboard.</param>
 		public LeaderboardUpdatingEventArgs(SGNLeaderboard leaderboard)

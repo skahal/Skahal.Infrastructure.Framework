@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// Opponent disconnected event arguments.
@@ -12,7 +12,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.OpponentDisconnectedEventArgs"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.OpponentDisconnectedEventArgs"/> class.
 		/// </summary>
 		/// <param name="opponent">Opponent.</param>
 		public OpponentDisconnectedEventArgs(SGNPlayer opponent)

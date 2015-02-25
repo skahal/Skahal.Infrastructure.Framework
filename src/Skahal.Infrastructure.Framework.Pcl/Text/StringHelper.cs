@@ -10,7 +10,7 @@ using HelperSharp.PCL;
 
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Text
+namespace Skahal.Infrastructure.Framework.PCL.Text
 {
     /// <summary>
     /// Classe utilitária para strings.

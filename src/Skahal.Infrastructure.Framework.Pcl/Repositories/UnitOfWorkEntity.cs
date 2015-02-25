@@ -1,6 +1,6 @@
-﻿using Skahal.Infrastructure.Framework.Domain;
+﻿using Skahal.Infrastructure.Framework.PCL.Domain;
 
-namespace Skahal.Infrastructure.Framework.Repositories
+namespace Skahal.Infrastructure.Framework.PCL.Repositories
 {
     /// <summary>
     /// The states of an entity inside the Unit Of Work.

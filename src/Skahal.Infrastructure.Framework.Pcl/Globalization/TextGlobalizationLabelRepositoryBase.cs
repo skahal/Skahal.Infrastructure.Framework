@@ -1,9 +1,9 @@
 using System;
-using Skahal.Infrastructure.Framework.Repositories;
-using Skahal.Infrastructure.Framework.Logging;
+using Skahal.Infrastructure.Framework.PCL.Repositories;
+using Skahal.Infrastructure.Framework.PCL.Logging;
 using System.Collections.Generic;
 
-namespace Skahal.Infrastructure.Framework.Globalization
+namespace Skahal.Infrastructure.Framework.PCL.Globalization
 {
 	/// <summary>
 	/// Text globalization label repository base class.
@@ -14,7 +14,7 @@ namespace Skahal.Infrastructure.Framework.Globalization
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.Globalization.TextGlobalizationLabelRepositoryBase"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.Globalization.TextGlobalizationLabelRepositoryBase"/> class.
 		/// </summary>
 		protected TextGlobalizationLabelRepositoryBase()
 		{

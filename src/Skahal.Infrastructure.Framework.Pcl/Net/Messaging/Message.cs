@@ -2,7 +2,7 @@
 using System.Collections;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Net.Messaging
+namespace Skahal.Infrastructure.Framework.PCL.Net.Messaging
 {
 	/// <summary>
 	/// Represents a message.
@@ -11,14 +11,14 @@ namespace Skahal.Infrastructure.Framework.Net.Messaging
 	{		
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Net.Messaging.Message"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Net.Messaging.Message"/> class.
 		/// </summary>
 		public Message ()
 		{	
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Net.Messaging.Message"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Net.Messaging.Message"/> class.
 		/// </summary>
 		/// <param name="name">The message name.</param>
 		/// <param name="value">The message value.</param>

@@ -1,6 +1,6 @@
 using System;
 
-namespace Skahal.Infrastructure.Framework
+namespace Skahal.Infrastructure.Framework.PCL
 {
 	/// <summary>
 	/// Net helper.

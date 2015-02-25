@@ -1,6 +1,6 @@
 ﻿
 using System;
-namespace Skahal.Infrastructure.Framework.Domain
+namespace Skahal.Infrastructure.Framework.PCL.Domain
 {
     /// <summary>
     /// A domain entity base class that use a strong Id property instead object Key as entity key.

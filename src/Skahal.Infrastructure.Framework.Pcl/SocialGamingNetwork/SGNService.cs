@@ -1,10 +1,10 @@
 #region Usings
 using System;
-using Skahal.Infrastructure.Framework.Logging;
+using Skahal.Infrastructure.Framework.PCL.Logging;
 using System.Diagnostics;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {	
 	/// <summary>
 	/// Social Gaming Network service.
@@ -58,7 +58,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		
 		#region Properties
 		/// <summary>
-		/// Gets a value indicating whether this <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNService"/>
+		/// Gets a value indicating whether this <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNService"/>
 		/// is initialized.
 		/// </summary>
 		/// <value><c>true</c> if initialized; otherwise, <c>false</c>.</value>

@@ -1,9 +1,9 @@
 #region Usings
 using System;
-using Skahal.Infrastructure.Framework.Commons;
+using Skahal.Infrastructure.Framework.PCL.Commons;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Logging
+namespace Skahal.Infrastructure.Framework.PCL.Logging
 {
 	#region Enums
 	/// <summary>

@@ -5,7 +5,7 @@ using System.Globalization;
 
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Logging
+namespace Skahal.Infrastructure.Framework.PCL.Logging
 {
 	/// <summary>
 	/// SH log written event arguments.
@@ -14,7 +14,7 @@ namespace Skahal.Infrastructure.Framework.Logging
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Logging.LogWrittenEventArgs"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Logging.LogWrittenEventArgs"/> class.
 		/// </summary>
 		/// <param name="message">Message.</param>
 		public LogWrittenEventArgs (string message)
@@ -23,7 +23,7 @@ namespace Skahal.Infrastructure.Framework.Logging
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Logging.LogWrittenEventArgs"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Logging.LogWrittenEventArgs"/> class.
 		/// </summary>
 		/// <param name="message">Message.</param>
 		/// <param name="args">Arguments.</param>

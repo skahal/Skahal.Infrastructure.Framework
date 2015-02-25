@@ -1,6 +1,6 @@
 using System;
 
-namespace Skahal.Infrastructure.Framework.People
+namespace Skahal.Infrastructure.Framework.PCL.People
 {
 	/// <summary>
 	/// Represents an user preference.

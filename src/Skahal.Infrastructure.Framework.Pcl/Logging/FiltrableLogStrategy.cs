@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Skahal.Infrastructure.Framework.Commons;
+using Skahal.Infrastructure.Framework.PCL.Commons;
 
-namespace Skahal.Infrastructure.Framework.Logging
+namespace Skahal.Infrastructure.Framework.PCL.Logging
 {
 	/// <summary>
 	/// A filtrable log strategy used for filter an underlying log strategy.
@@ -15,7 +15,7 @@ namespace Skahal.Infrastructure.Framework.Logging
 
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Logging.FiltrableLogStrategy"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Logging.FiltrableLogStrategy"/> class.
 		/// </summary>
 		/// <param name="underlyingLogStrategy">Underlying log strategy.</param>
 		public FiltrableLogStrategy(ILogStrategy underlyingLogStrategy)

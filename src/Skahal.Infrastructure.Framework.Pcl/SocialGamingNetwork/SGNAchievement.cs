@@ -2,7 +2,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork
 {
 	/// <summary>
 	/// Defines an achievement.
@@ -11,7 +11,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNAchievement"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNAchievement"/> class.
 		/// </summary>
 		/// <param name="id">Identifier.</param>
 		public SGNAchievement(string id)
@@ -42,11 +42,11 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		
 		#region Methods
 		/// <summary>
-		/// Determines whether the specified <see cref="System.Object"/> is equal to the current <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNAchievement"/>.
+		/// Determines whether the specified <see cref="System.Object"/> is equal to the current <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNAchievement"/>.
 		/// </summary>
-		/// <param name="obj">The <see cref="System.Object"/> to compare with the current <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNAchievement"/>.</param>
+		/// <param name="obj">The <see cref="System.Object"/> to compare with the current <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNAchievement"/>.</param>
 		/// <returns><c>true</c> if the specified <see cref="System.Object"/> is equal to the current
-		/// <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNAchievement"/>; otherwise, <c>false</c>.</returns>
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNAchievement"/>; otherwise, <c>false</c>.</returns>
 		public override bool Equals(object obj)
 		{
 			var achievement = obj as SGNAchievement;
@@ -60,7 +60,7 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		}
 	
 		/// <summary>
-		/// Serves as a hash function for a <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNAchievement"/> object.
+		/// Serves as a hash function for a <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNAchievement"/> object.
 		/// </summary>
 		/// <returns>A hash code for this instance that is suitable for use in hashing algorithms and data structures such as a hash table.</returns>
 		public override int GetHashCode()
@@ -69,9 +69,9 @@ namespace Skahal.Infrastructure.Framework.SocialGamingNetwork
 		}
 
 		/// <summary>
-		/// Returns a <see cref="System.String"/> that represents the current <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNAchievement"/>.
+		/// Returns a <see cref="System.String"/> that represents the current <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNAchievement"/>.
 		/// </summary>
-		/// <returns>A <see cref="System.String"/> that represents the current <see cref="Skahal.Infrastructure.Framework.SocialGamingNetwork.SGNAchievement"/>.</returns>
+		/// <returns>A <see cref="System.String"/> that represents the current <see cref="Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.SGNAchievement"/>.</returns>
 		public override string ToString()
 		{
 			return string.Format("[SGNAchievement: ID={0}, Name={1}, Percent={2}]", ID, Name, Percent);

@@ -1,10 +1,10 @@
 #region Usings
 using System;
 using System.Globalization;
-using Skahal.Infrastructure.Framework.Commons;
+using Skahal.Infrastructure.Framework.PCL.Commons;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Text.Spelling
+namespace Skahal.Infrastructure.Framework.PCL.Text.Spelling
 {
 	/// <summary>
 	/// Spelling service.

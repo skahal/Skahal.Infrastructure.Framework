@@ -2,7 +2,7 @@
 using System.Collections;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Net.Messaging
+namespace Skahal.Infrastructure.Framework.PCL.Net.Messaging
 {
 	/// <summary>
 	/// Message received event arguments.
@@ -12,7 +12,7 @@ namespace Skahal.Infrastructure.Framework.Net.Messaging
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.Net.Messaging.MessageEventArgs"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.Net.Messaging.MessageEventArgs"/> class.
 		/// </summary>
 		/// <param name="message">Message.</param>
 		public MessageEventArgs (Message message)
@@ -22,7 +22,7 @@ namespace Skahal.Infrastructure.Framework.Net.Messaging
 
 		/// <summary>
 		/// Initializes a new instance of the
-		/// <see cref="Skahal.Infrastructure.Framework.Net.Messaging.MessageEventArgs"/> class.
+		/// <see cref="Skahal.Infrastructure.Framework.PCL.Net.Messaging.MessageEventArgs"/> class.
 		/// </summary>
 		/// <param name="name">Name.</param>
 		/// <param name="value">Value.</param>

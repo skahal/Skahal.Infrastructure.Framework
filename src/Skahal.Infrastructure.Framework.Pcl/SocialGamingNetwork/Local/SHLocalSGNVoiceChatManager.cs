@@ -1,10 +1,10 @@
 #region Usings
 using System;
-using Skahal.Infrastructure.Framework.Commons;
+using Skahal.Infrastructure.Framework.PCL.Commons;
 using System.Collections.Generic;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.SocialGamingNetwork.Local
+namespace Skahal.Infrastructure.Framework.PCL.SocialGamingNetwork.Local
 {
 	/// <summary>
 	/// A local SGN voice chat manager.

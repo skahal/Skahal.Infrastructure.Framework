@@ -1,7 +1,7 @@
 using System;
-using Skahal.Infrastructure.Framework.Repositories;
+using Skahal.Infrastructure.Framework.PCL.Repositories;
 
-namespace Skahal.Infrastructure.Framework.People
+namespace Skahal.Infrastructure.Framework.PCL.People
 {
 	/// <summary>
 	/// Defines a interface for user repository.

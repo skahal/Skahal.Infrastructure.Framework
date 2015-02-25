@@ -1,4 +1,4 @@
-﻿namespace Skahal.Infrastructure.Framework.Domain
+﻿namespace Skahal.Infrastructure.Framework.PCL.Domain
 {
 	/// <summary>
 	/// Defines a basic interface for a domain entity.

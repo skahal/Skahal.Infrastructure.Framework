@@ -1,8 +1,8 @@
 using System;
-using Skahal.Infrastructure.Framework.Commons;
-using Skahal.Infrastructure.Framework.Repositories;
+using Skahal.Infrastructure.Framework.PCL.Commons;
+using Skahal.Infrastructure.Framework.PCL.Repositories;
 
-namespace Skahal.Infrastructure.Framework.Domain
+namespace Skahal.Infrastructure.Framework.PCL.Domain
 {
 	/// <summary>
 	/// A domain service base class.
@@ -14,7 +14,7 @@ namespace Skahal.Infrastructure.Framework.Domain
 	{
 		#region Constructors 
 		/// <summary>
-		/// Initializes a new instance of the Skahal.Infrastructure.Framework.Domain.ServiceBase/> class.
+		/// Initializes a new instance of the Skahal.Infrastructure.Framework.PCL.Domain.ServiceBase/> class.
 		/// </summary>
 		protected ServiceBase() 
 			: this(DependencyService.Create<TMainRepository>(), DependencyService.Create<TUnitOfWork>())
@@ -22,7 +22,7 @@ namespace Skahal.Infrastructure.Framework.Domain
 		} 
 
 		/// <summary>
-		/// Initializes a new instance of the Skahal.Infrastructure.Framework.Domain.ServiceBase/> class.
+		/// Initializes a new instance of the Skahal.Infrastructure.Framework.PCL.Domain.ServiceBase/> class.
 		/// </summary>
 		/// <param name="eventRepository">Event repository.</param>
 		/// <param name="unitOfWork">Unit of work.</param>

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Skahal.Infrastructure.Framework.Domain;
+using Skahal.Infrastructure.Framework.PCL.Domain;
 using System.Linq;
 
-namespace Skahal.Infrastructure.Framework.People
+namespace Skahal.Infrastructure.Framework.PCL.People
 {
 	/// <summary>
 	/// Represents a user.
@@ -12,7 +12,7 @@ namespace Skahal.Infrastructure.Framework.People
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.People.User"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.People.User"/> class.
 		/// <remarks>
 		/// The entity will receive a new and unique key.
 		/// </remarks>
@@ -23,7 +23,7 @@ namespace Skahal.Infrastructure.Framework.People
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.People.User"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.People.User"/> class.
 		/// </summary>
 		/// <param name="key">The entity key.</param>
 		public User(object key) : base(key)

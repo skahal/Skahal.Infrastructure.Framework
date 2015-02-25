@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using Skahal.Infrastructure.Framework.Logging;
+using Skahal.Infrastructure.Framework.PCL.Logging;
 #endregion
 		  
-namespace Skahal.Infrastructure.Framework.Commons
+namespace Skahal.Infrastructure.Framework.PCL.Commons
 {
 	/// <summary>
 	/// Infrastructure service for dependency injection.

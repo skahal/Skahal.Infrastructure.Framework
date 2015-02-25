@@ -1,6 +1,6 @@
 using System;
 
-namespace Skahal.Infrastructure.Framework.Globalization
+namespace Skahal.Infrastructure.Framework.PCL.Globalization
 {
     /// <summary>
     /// A TextGlobalizationLabelRepositoryBase using file.

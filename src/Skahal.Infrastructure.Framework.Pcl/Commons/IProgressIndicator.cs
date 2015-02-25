@@ -5,7 +5,7 @@
 using System;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Commons
+namespace Skahal.Infrastructure.Framework.PCL.Commons
 {
 	/// <summary>
 	/// Defines an interface for a progress indicator.

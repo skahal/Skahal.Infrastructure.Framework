@@ -4,7 +4,7 @@ using System.Text;
 using System.Collections.Generic;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Collections
+namespace Skahal.Infrastructure.Framework.PCL.Collections
 {
 	/// <summary>
 	/// Extensions methods to collections.

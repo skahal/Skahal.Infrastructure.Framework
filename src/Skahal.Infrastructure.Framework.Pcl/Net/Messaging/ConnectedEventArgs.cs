@@ -2,7 +2,7 @@
 using System.Collections;
 #endregion
 
-namespace Skahal.Infrastructure.Framework.Net.Messaging
+namespace Skahal.Infrastructure.Framework.PCL.Net.Messaging
 {
 	/// <summary>
 	/// Connected event arguments.
@@ -11,7 +11,7 @@ namespace Skahal.Infrastructure.Framework.Net.Messaging
 	{
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Net.Messaging.ConnectedEventArgs"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Net.Messaging.ConnectedEventArgs"/> class.
 		/// </summary>
 		/// <param name="connectionOrder">Connection order.</param>
 		public ConnectedEventArgs (int connectionOrder)

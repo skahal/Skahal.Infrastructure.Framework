@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle("Skahal.Infrastructure.Framework")]
+[assembly: AssemblyTitle("Skahal.Infrastructure.Framework.PCL")]
 [assembly: AssemblyDescription("Skahal Infrastructure Framework")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Skahal Studios")]
@@ -13,11 +13,11 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyCopyright("giacomelli")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: InternalsVisibleTo("Skahal.Infrastructure.Framework.UnitTests")]
+[assembly: InternalsVisibleTo("Skahal.Infrastructure.Framework.PCL.UnitTests")]
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")] // RhinoMocks.
 [assembly: InternalsVisibleTo("Skahal.Infrastructure.Unity")]
 [assembly: InternalsVisibleTo("Skahal.Infrastructure.Mono")]
-[assembly: InternalsVisibleTo("Skahal.Infrastructure.Framework.ProtobufSerializer")]
+[assembly: InternalsVisibleTo("Skahal.Infrastructure.Framework.PCL.ProtobufSerializer")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,

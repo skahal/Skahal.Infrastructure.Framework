@@ -1,7 +1,7 @@
 using System;
-using Skahal.Infrastructure.Framework.Repositories;
+using Skahal.Infrastructure.Framework.PCL.Repositories;
 
-namespace Skahal.Infrastructure.Framework.Globalization
+namespace Skahal.Infrastructure.Framework.PCL.Globalization
 {
 	/// <summary>
 	/// Defines a interface for globalization label repository.

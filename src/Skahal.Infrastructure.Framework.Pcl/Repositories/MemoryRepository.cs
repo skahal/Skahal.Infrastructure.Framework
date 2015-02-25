@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using HelperSharp.PCL;
-using Skahal.Infrastructure.Framework.Domain;
-using Skahal.Infrastructure.Framework.Repositories;
+using Skahal.Infrastructure.Framework.PCL.Domain;
+using Skahal.Infrastructure.Framework.PCL.Repositories;
 using System.Reflection;
 
-namespace Skahal.Infrastructure.Framework.Repositories
+namespace Skahal.Infrastructure.Framework.PCL.Repositories
 {
 	/// <summary>
 	/// A basic repository on memory.
@@ -23,7 +23,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 
 		#region Constructors
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Repositories.MemoryRepository&lt;TEntity, TKey&gt;"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Repositories.MemoryRepository&lt;TEntity, TKey&gt;"/> class.
 		/// </summary>
         public MemoryRepository(Func<TEntity, object> createNewKey)
 		{
@@ -32,7 +32,7 @@ namespace Skahal.Infrastructure.Framework.Repositories
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.Repositories.MemoryRepository&lt;TEntity, TKey&gt;"/> class.
+		/// Initializes a new instance of the <see cref="Skahal.Infrastructure.Framework.PCL.Repositories.MemoryRepository&lt;TEntity, TKey&gt;"/> class.
 		/// </summary>
 		/// <param name="createNewKey">Create new key.</param>
 		/// <param name="unitOfWork">Unit of work.</param>
