@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AE2339
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skahal.Infrastructure.Framework.PCL", "Skahal.Infrastructure.Framework.Pcl\Skahal.Infrastructure.Framework.PCL.csproj", "{78B89EB0-3FA9-49FF-882C-9560B02418CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skahal.Infrastructure.Framework.PCL.UnitTests", "Skahal.Infrastructure.Framework.PCL.UnitTests\Skahal.Infrastructure.Framework.PCL.UnitTests.csproj", "{2B1683E4-EC57-45DB-B079-6F326B3CBCA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		iOS|Any CPU = iOS|Any CPU
@@ -22,6 +24,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B1683E4-EC57-45DB-B079-6F326B3CBCA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B1683E4-EC57-45DB-B079-6F326B3CBCA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B1683E4-EC57-45DB-B079-6F326B3CBCA8}.iOS|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B1683E4-EC57-45DB-B079-6F326B3CBCA8}.iOS|Any CPU.Build.0 = Debug|Any CPU
+		{2B1683E4-EC57-45DB-B079-6F326B3CBCA8}.OSX|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B1683E4-EC57-45DB-B079-6F326B3CBCA8}.OSX|Any CPU.Build.0 = Debug|Any CPU
+		{2B1683E4-EC57-45DB-B079-6F326B3CBCA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B1683E4-EC57-45DB-B079-6F326B3CBCA8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.Debug|Any CPU.ActiveCfg = OSX|Any CPU
 		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.Debug|Any CPU.Build.0 = OSX|Any CPU
 		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.iOS|Any CPU.ActiveCfg = iOS|Any CPU
