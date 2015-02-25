@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">OSX</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Skahal.Infrastructure.Framework</RootNamespace>
@@ -18,8 +16,7 @@
     <Optimize>false</Optimize>
     <OutputPath>..\build</OutputPath>
     <WarningLevel>4</WarningLevel>
-    <GenerateDocumentation>true</GenerateDocumentation>
-    <DocumentationFile>..\Build\Skahal.Infrastructure.Framework.xml</DocumentationFile>
+    <DocumentationFile>..\build\Skahal.Infrastructure.Framework.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
@@ -27,25 +24,21 @@
     <Optimize>false</Optimize>
     <OutputPath>..\build</OutputPath>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Build\Skahal.Infrastructure.Framework.xml</DocumentationFile>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <GenerateDocumentation>true</GenerateDocumentation>
+    <DocumentationFile>..\build\Skahal.Infrastructure.Framework.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HelperSharp, Version=1.0.5358.23405, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\HelperSharp.0.0.4.1\lib\net35\HelperSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Abstractions, Version=1.4.0.92, Culture=neutral, PublicKeyToken=d480b5b72fb413da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.IO.Abstractions">
       <HintPath>..\packages\System.IO.Abstractions.1.4.0.92\lib\net35\System.IO.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml" />
+    <Reference Include="HelperSharp">
+      <HintPath>..\packages\HelperSharp.0.0.4.1\lib\net35\HelperSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\EntityWithIdBase.cs" />

@@ -12,25 +12,44 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AE2339
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skahal.Infrastructure.Framework.PCL", "Skahal.Infrastructure.Framework.Pcl\Skahal.Infrastructure.Framework.PCL.csproj", "{78B89EB0-3FA9-49FF-882C-9560B02418CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		iOS|Any CPU = iOS|Any CPU
 		OSX|Any CPU = OSX|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.iOS|Any CPU.ActiveCfg = iOS|Any CPU
-		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.iOS|Any CPU.Build.0 = iOS|Any CPU
-		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.OSX|Any CPU.ActiveCfg = OSX|Any CPU
-		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.OSX|Any CPU.Build.0 = OSX|Any CPU
+		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.Debug|Any CPU.ActiveCfg = OSX|Any CPU
+		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.Debug|Any CPU.Build.0 = OSX|Any CPU
 		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.iOS|Any CPU.ActiveCfg = iOS|Any CPU
 		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.iOS|Any CPU.Build.0 = iOS|Any CPU
 		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.OSX|Any CPU.ActiveCfg = OSX|Any CPU
 		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.OSX|Any CPU.Build.0 = OSX|Any CPU
+		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.Release|Any CPU.ActiveCfg = OSX|Any CPU
+		{45F81846-29F4-4B6D-B5A4-E90DBA7B9736}.Release|Any CPU.Build.0 = OSX|Any CPU
+		{78B89EB0-3FA9-49FF-882C-9560B02418CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B89EB0-3FA9-49FF-882C-9560B02418CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B89EB0-3FA9-49FF-882C-9560B02418CE}.iOS|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B89EB0-3FA9-49FF-882C-9560B02418CE}.iOS|Any CPU.Build.0 = Debug|Any CPU
+		{78B89EB0-3FA9-49FF-882C-9560B02418CE}.OSX|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B89EB0-3FA9-49FF-882C-9560B02418CE}.OSX|Any CPU.Build.0 = Debug|Any CPU
+		{78B89EB0-3FA9-49FF-882C-9560B02418CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B89EB0-3FA9-49FF-882C-9560B02418CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.Debug|Any CPU.ActiveCfg = OSX|Any CPU
+		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.Debug|Any CPU.Build.0 = OSX|Any CPU
+		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.iOS|Any CPU.ActiveCfg = iOS|Any CPU
+		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.iOS|Any CPU.Build.0 = iOS|Any CPU
+		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.OSX|Any CPU.ActiveCfg = OSX|Any CPU
+		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.OSX|Any CPU.Build.0 = OSX|Any CPU
+		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.Release|Any CPU.ActiveCfg = OSX|Any CPU
+		{E9AFC17C-D3D2-4D37-9FBC-64518DCFCF28}.Release|Any CPU.Build.0 = OSX|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Skahal.Infrastructure.Framework\Skahal.Infrastructure.Framework.csproj
 	EndGlobalSection
 EndGlobal
