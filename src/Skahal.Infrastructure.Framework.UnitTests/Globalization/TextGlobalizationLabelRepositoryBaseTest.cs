@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace Skahal.Infrastructure.Framework.UnitTests
 {
+	#if !PCL
 	[TestFixture()]
 	public class TextGlobalizationLabelRepositoryBaseTest
 	{
@@ -53,5 +54,6 @@ namespace Skahal.Infrastructure.Framework.UnitTests
 			Assert.AreSame ("es-ES", label.CultureName);
 		}
 	}
+	#endif
 }
 

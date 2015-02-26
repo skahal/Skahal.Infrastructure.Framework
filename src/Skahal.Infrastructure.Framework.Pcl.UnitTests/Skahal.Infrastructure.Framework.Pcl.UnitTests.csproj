@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E8FF62B-E883-4D09-BF41-2A8643024334}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Skahal.Infrastructure.Framework.Pcl.UnitTests</RootNamespace>
+    <AssemblyName>Skahal.Infrastructure.Framework.Pcl.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;PCL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DefineConstants>PCL</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Utils.Zip">
+      <HintPath>..\packages\TestSharp.1.0.2\lib\net40\Ionic.Utils.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="TestSharp">
+      <HintPath>..\packages\TestSharp.1.0.2\lib\net40\TestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>..\packages\System.IO.Abstractions.2.0.0.103\lib\net40\System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions.TestingHelpers">
+      <HintPath>..\packages\System.IO.Abstractions.TestingHelpers.2.0.0.103\lib\net40\System.IO.Abstractions.TestingHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="HelperSharp.Pcl">
+      <HintPath>..\references\HelperSharp.PCL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commons\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Globalization\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Net\" />
+    <Folder Include="People\" />
+    <Folder Include="Pooling\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Commons\AppServiceTest.cs">
+      <Link>Commons\AppServiceTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Commons\DependencyServiceTest.cs">
+      <Link>Commons\DependencyServiceTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Commons\EventHandlerExtensionsTest.cs">
+      <Link>Commons\EventHandlerExtensionsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Domain\EntityBaseTest.cs">
+      <Link>Domain\EntityBaseTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Domain\EntityWithIdBaseTest.cs">
+      <Link>Domain\EntityWithIdBaseTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Domain\EntityWithIdLongStub.cs">
+      <Link>Domain\EntityWithIdLongStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Domain\EntityWithIdStringStub.cs">
+      <Link>Domain\EntityWithIdStringStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Globalization\GlobalizationServiceTest.cs">
+      <Link>Globalization\GlobalizationServiceTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Globalization\TextGlobalizationLabelRepositoryBaseTest.cs">
+      <Link>Globalization\TextGlobalizationLabelRepositoryBaseTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Logging\BufferLogStrategyTest.cs">
+      <Link>Logging\BufferLogStrategyTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Logging\FiltrableLogStrategyTest.cs">
+      <Link>Logging\FiltrableLogStrategyTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Logging\LogServiceTest.cs">
+      <Link>Logging\LogServiceTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Logging\LogStrategyBaseTest.cs">
+      <Link>Logging\LogStrategyBaseTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Logging\Stubs\LogStrategyStub.cs">
+      <Link>Logging\Stubs\LogStrategyStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Net\NetHelperTest.cs">
+      <Link>Net\NetHelperTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Net\Messaging\DisconnectedEventArgsTest.cs">
+      <Link>Net\Messaging\DisconnectedEventArgsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Net\Messaging\MessageConverterTest.cs">
+      <Link>Net\Messaging\MessageConverterTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Net\Messaging\MessageEventArgsTest.cs">
+      <Link>Net\Messaging\MessageEventArgsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Net\Messaging\MessageTest.cs">
+      <Link>Net\Messaging\MessageTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Net\Messaging\MessengerBaseTest.cs">
+      <Link>Net\Messaging\MessengerBaseTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\People\UserTest.cs">
+      <Link>People\UserTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Pooling\PoolServiceTest.cs">
+      <Link>Pooling\PoolServiceTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Repositories\EntityWithIntIdStub.cs">
+      <Link>Repositories\EntityWithIntIdStub.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Repositories\MemoryRepositoryTest.cs">
+      <Link>Repositories\MemoryRepositoryTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Repositories\MemoryUnitOfWorkTest.cs">
+      <Link>Repositories\MemoryUnitOfWorkTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Repositories\RepositoryBaseTest.cs">
+      <Link>Repositories\RepositoryBaseTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework.UnitTests\Repositories\RepositoryExtensionsTest.cs">
+      <Link>Repositories\RepositoryExtensionsTest.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Skahal.Infrastructure.Framework.Pcl\Skahal.Infrastructure.Framework.Pcl.csproj">
+      <Project>{A2F0E5D0-98B0-4AFB-877D-2A3E68D71E07}</Project>
+      <Name>Skahal.Infrastructure.Framework.Pcl</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

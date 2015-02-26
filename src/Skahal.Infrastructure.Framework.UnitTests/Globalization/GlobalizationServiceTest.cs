@@ -54,6 +54,7 @@ namespace Skahal.Infrastructure.Framework.UnitTests
 			repository.VerifyAllExpectations ();
 		}
 
+		#if !PCL
 		[Test()]
 		public void Translate_HasTranslationForCulture_TranslatedTestToCulture ()
 		{
@@ -76,6 +77,7 @@ namespace Skahal.Infrastructure.Framework.UnitTests
 			actual = GlobalizationService.Translate ("TEST");
 			Assert.AreEqual ("TEST", actual);
 		}
+		#endif
 		#endregion
 	}
 }

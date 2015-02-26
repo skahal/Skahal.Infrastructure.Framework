@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using HelperSharp;
 using Skahal.Infrastructure.Framework.Domain;
 using Skahal.Infrastructure.Framework.Repositories;
+using System.Reflection;
 
 namespace Skahal.Infrastructure.Framework.Repositories
 {
@@ -142,9 +143,16 @@ namespace Skahal.Infrastructure.Framework.Repositories
 				throw new InvalidOperationException ("There is another entity with id '{0}'.".With(item.Key));
 			}
 
-			if (item.Key == null || (item.Key.GetType().IsValueType && Activator.CreateInstance(item.Key.GetType()).Equals(item.Key))) {
+			#if PCL
+				if (item.Key == null || (item.Key.GetType().GetTypeInfo().IsValueType && Activator.CreateInstance(item.Key.GetType()).Equals(item.Key))) {
 				item.Key = m_createNewKey (item);
 			}
+			#else
+				if (item.Key == null || (item.Key.GetType().IsValueType && Activator.CreateInstance(item.Key.GetType()).Equals(item.Key))) {
+				item.Key = m_createNewKey (item);
+			}
+			#endif
+				
 
 			Entities.Add (item);
 		}

@@ -132,6 +132,18 @@ namespace Skahal.Infrastructure.Framework.Text
 		/// <returns>String com os acentos e cedilhas removidos.</returns>
         public static string RemoveAccents(this string source)
 		{
+			#if PCL
+
+			//8 bit characters 
+			byte[] b = Encoding.GetEncoding("1251").GetBytes(source); 
+
+			// 7 bit characters
+			string t = Encoding.UTF8.GetString(b, 0, b.Length);  
+			Regex re = new Regex("[^a-zA-Z0-9]=-_/");
+			string c = re.Replace(t, " ");
+			return c;
+
+			#else
 			//8 bit characters 
 			byte[] b = Encoding.GetEncoding(1251).GetBytes(source); 
 
@@ -140,6 +152,7 @@ namespace Skahal.Infrastructure.Framework.Text
 			Regex re = new Regex("[^a-zA-Z0-9]=-_/");
 			string c = re.Replace(t, " ");
 			return c;
+			#endif
 		}
 
         /// <summary>

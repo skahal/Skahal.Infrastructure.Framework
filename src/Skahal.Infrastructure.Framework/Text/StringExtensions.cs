@@ -61,7 +61,11 @@ namespace Skahal.Infrastructure.Framework.Text
 		/// <param name="value">Value.</param>
 		public static bool ContainsIgnoreCase(this string source, string value)
 		{
+			#if PCL
+			return source.IndexOf(value, StringComparison.OrdinalIgnoreCase) > -1;
+			#else
 			return source.IndexOf(value, StringComparison.InvariantCultureIgnoreCase) > -1;
+			#endif
 		}
 		#endregion
 		

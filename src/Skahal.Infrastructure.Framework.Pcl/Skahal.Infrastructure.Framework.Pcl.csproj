@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{A2F0E5D0-98B0-4AFB-877D-2A3E68D71E07}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Skahal.Infrastructure.Framework.Pcl</RootNamespace>
+    <AssemblyName>Skahal.Infrastructure.Framework.Pcl</AssemblyName>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;PCL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DefineConstants>PCL</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Skahal.Infrastructure.Framework\Collections\CollectionExtensions.cs">
+      <Link>Collections\CollectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Commons\AppService.cs">
+      <Link>Commons\AppService.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Commons\DependencyService.cs">
+      <Link>Commons\DependencyService.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Commons\EventHandlerExtensions.cs">
+      <Link>Commons\EventHandlerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Commons\IAppStrategy.cs">
+      <Link>Commons\IAppStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Commons\IProgressIndicator.cs">
+      <Link>Commons\IProgressIndicator.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Commons\ProgressIndicator.cs">
+      <Link>Commons\ProgressIndicator.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Configuration\BootstrapperBase.cs">
+      <Link>Configuration\BootstrapperBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Domain\DomainException.cs">
+      <Link>Domain\DomainException.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Domain\EntityBase.cs">
+      <Link>Domain\EntityBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Domain\EntityWithIdBase.cs">
+      <Link>Domain\EntityWithIdBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Domain\IAggregateRoot.cs">
+      <Link>Domain\IAggregateRoot.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Domain\IEntity.cs">
+      <Link>Domain\IEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Domain\ServiceBase.cs">
+      <Link>Domain\ServiceBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Globalization\FileGlobalizationLabelRepository.cs">
+      <Link>Globalization\FileGlobalizationLabelRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Globalization\GlobalizationExtensions.cs">
+      <Link>Globalization\GlobalizationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Globalization\GlobalizationLabel.cs">
+      <Link>Globalization\GlobalizationLabel.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Globalization\GlobalizationService.cs">
+      <Link>Globalization\GlobalizationService.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Globalization\IGlobalizationLabelRepository.cs">
+      <Link>Globalization\IGlobalizationLabelRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Globalization\MemoryGlobalizationLabelRepository.cs">
+      <Link>Globalization\MemoryGlobalizationLabelRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Globalization\TextGlobalizationLabelRepositoryBase.cs">
+      <Link>Globalization\TextGlobalizationLabelRepositoryBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Logging\BufferLogStrategy.cs">
+      <Link>Logging\BufferLogStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Logging\FiltrableLogStrategy.cs">
+      <Link>Logging\FiltrableLogStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Logging\ILogStrategy.cs">
+      <Link>Logging\ILogStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Logging\LogMessage.cs">
+      <Link>Logging\LogMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Logging\LogService.cs">
+      <Link>Logging\LogService.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Logging\LogStrategyBase.cs">
+      <Link>Logging\LogStrategyBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Logging\LogWrittenEventArgs.cs">
+      <Link>Logging\LogWrittenEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Net\NetHelper.cs">
+      <Link>Net\NetHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Net\Messaging\ConnectedEventArgs.cs">
+      <Link>Net\Messaging\ConnectedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Net\Messaging\DisconnectedEventArgs.cs">
+      <Link>Net\Messaging\DisconnectedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Net\Messaging\IMessenger.cs">
+      <Link>Net\Messaging\IMessenger.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Net\Messaging\Message.cs">
+      <Link>Net\Messaging\Message.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Net\Messaging\MessageConverter.cs">
+      <Link>Net\Messaging\MessageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Net\Messaging\MessageEventArgs.cs">
+      <Link>Net\Messaging\MessageEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Net\Messaging\MessengerBase.cs">
+      <Link>Net\Messaging\MessengerBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\People\IUserRepository.cs">
+      <Link>People\IUserRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\People\User.cs">
+      <Link>People\User.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\People\UserPreference.cs">
+      <Link>People\UserPreference.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\People\UserService.cs">
+      <Link>People\UserService.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Pooling\IPool.cs">
+      <Link>Pooling\IPool.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Pooling\PoolBase.cs">
+      <Link>Pooling\PoolBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Pooling\PoolService.cs">
+      <Link>Pooling\PoolService.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Repositories\EntityRepositoryPair.cs">
+      <Link>Repositories\EntityRepositoryPair.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Repositories\IRepository.cs">
+      <Link>Repositories\IRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Repositories\IUnitOfWork.cs">
+      <Link>Repositories\IUnitOfWork.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Repositories\IUnitOfWorkRepository.cs">
+      <Link>Repositories\IUnitOfWorkRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Repositories\MemoryRepository.cs">
+      <Link>Repositories\MemoryRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Repositories\MemoryUnitOfWork.cs">
+      <Link>Repositories\MemoryUnitOfWork.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Repositories\RepositoryBase.cs">
+      <Link>Repositories\RepositoryBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Repositories\RepositoryExtensions.cs">
+      <Link>Repositories\RepositoryExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Repositories\UnitOfWorkEntity.cs">
+      <Link>Repositories\UnitOfWorkEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\AchievementUnlockedEventArgs.cs">
+      <Link>SocialGamingNetwork\AchievementUnlockedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\AchievementUpdatedEventArgs.cs">
+      <Link>SocialGamingNetwork\AchievementUpdatedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\AchievementUpdatingEventArgs.cs">
+      <Link>SocialGamingNetwork\AchievementUpdatingEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\AchievementUpdatingFailedEventArgs.cs">
+      <Link>SocialGamingNetwork\AchievementUpdatingFailedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\AchievementsRefreshedEventArgs.cs">
+      <Link>SocialGamingNetwork\AchievementsRefreshedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\ActivityOpponentsRefreshedEventArgs.cs">
+      <Link>SocialGamingNetwork\ActivityOpponentsRefreshedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\ISGNAchievementManager.cs">
+      <Link>SocialGamingNetwork\ISGNAchievementManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\ISGNFactory.cs">
+      <Link>SocialGamingNetwork\ISGNFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\ISGNLeaderboardManager.cs">
+      <Link>SocialGamingNetwork\ISGNLeaderboardManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\ISGNMultiplayerManager.cs">
+      <Link>SocialGamingNetwork\ISGNMultiplayerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\ISGNPlayerManager.cs">
+      <Link>SocialGamingNetwork\ISGNPlayerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\ISGNUIManager.cs">
+      <Link>SocialGamingNetwork\ISGNUIManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\ISGNVoiceChatManager.cs">
+      <Link>SocialGamingNetwork\ISGNVoiceChatManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\InviteReceivedEventArgs.cs">
+      <Link>SocialGamingNetwork\InviteReceivedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\LeaderboardUpdatedEventArgs.cs">
+      <Link>SocialGamingNetwork\LeaderboardUpdatedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\LeaderboardUpdatingEventArgs.cs">
+      <Link>SocialGamingNetwork\LeaderboardUpdatingEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\LeaderboardUpdatingFailedEventArgs.cs">
+      <Link>SocialGamingNetwork\LeaderboardUpdatingFailedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\OpponentConnectedEventArgs.cs">
+      <Link>SocialGamingNetwork\OpponentConnectedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\OpponentDisconnectedEventArgs.cs">
+      <Link>SocialGamingNetwork\OpponentDisconnectedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\PlayerLoggedInEventArgs.cs">
+      <Link>SocialGamingNetwork\PlayerLoggedInEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\SGNAchievement.cs">
+      <Link>SocialGamingNetwork\SGNAchievement.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\SGNLeaderboard.cs">
+      <Link>SocialGamingNetwork\SGNLeaderboard.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\SGNPlayer.cs">
+      <Link>SocialGamingNetwork\SGNPlayer.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\SGNReliableDataManager.cs">
+      <Link>SocialGamingNetwork\SGNReliableDataManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\SGNService.cs">
+      <Link>SocialGamingNetwork\SGNService.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\Local\SHLocalSGNAchievementManager.cs">
+      <Link>SocialGamingNetwork\Local\SHLocalSGNAchievementManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\Local\SHLocalSGNFactory.cs">
+      <Link>SocialGamingNetwork\Local\SHLocalSGNFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\Local\SHLocalSGNLeaderboardManager.cs">
+      <Link>SocialGamingNetwork\Local\SHLocalSGNLeaderboardManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\Local\SHLocalSGNMultiplayerManager.cs">
+      <Link>SocialGamingNetwork\Local\SHLocalSGNMultiplayerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\Local\SHLocalSGNPlayerManager.cs">
+      <Link>SocialGamingNetwork\Local\SHLocalSGNPlayerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\Local\SHLocalSGNUIManager.cs">
+      <Link>SocialGamingNetwork\Local\SHLocalSGNUIManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\SocialGamingNetwork\Local\SHLocalSGNVoiceChatManager.cs">
+      <Link>SocialGamingNetwork\Local\SHLocalSGNVoiceChatManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Text\BindableTextKey.cs">
+      <Link>Text\BindableTextKey.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Text\DynamicTextBuilder.cs">
+      <Link>Text\DynamicTextBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Text\StringExtensions.cs">
+      <Link>Text\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Text\StringHelper.cs">
+      <Link>Text\StringHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Text\Spelling\ISpellingProvider.cs">
+      <Link>Text\Spelling\ISpellingProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Skahal.Infrastructure.Framework\Text\Spelling\SpellingService.cs">
+      <Link>Text\Spelling\SpellingService.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Collections\" />
+    <Folder Include="Commons\" />
+    <Folder Include="Configuration\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Globalization\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Net\" />
+    <Folder Include="People\" />
+    <Folder Include="Pooling\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="SocialGamingNetwork\" />
+    <Folder Include="Text\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="HelperSharp.Pcl">
+      <HintPath>..\references\HelperSharp.PCL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

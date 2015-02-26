@@ -5,7 +5,9 @@ namespace Skahal.Infrastructure.Framework.People
 	/// <summary>
 	/// Represents an user preference.
 	/// </summary>
-	[Serializable]
+	#if !PCL
+	[Serializable] 
+	#endif
 	public class UserPreference
 	{
 		#region Properties
