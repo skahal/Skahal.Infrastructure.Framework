@@ -2,7 +2,6 @@
 using System;
 using System.Globalization;
 using System.Linq;
-using Skahal.Infrastructure.Framework.PCL.People;
 using Skahal.Infrastructure.Framework.PCL.Logging;
 using Skahal.Infrastructure.Framework.PCL.Repositories;
 #endregion
@@ -49,7 +48,7 @@ namespace Skahal.Infrastructure.Framework.PCL.Globalization
 		public static CultureInfo CurrentCulture {
 			get {
 				if (s_currentCulture == null) {
-					s_currentCulture = new CultureInfo(SelectedCultureName);
+					s_currentCulture = EnUsCultureInfo;
 				}
 
 				return s_currentCulture;
@@ -58,7 +57,6 @@ namespace Skahal.Infrastructure.Framework.PCL.Globalization
 			private set {
 				if (!s_currentCulture.Name.Equals (value.Name))
 				{
-					SelectedCultureName = value.Name;
 					s_currentCulture = value;
 					s_labelRepository.LoadCultureLabels (value.Name);
 					
@@ -69,28 +67,7 @@ namespace Skahal.Infrastructure.Framework.PCL.Globalization
 				}
 			}
 		}
-
-		private static string SelectedCultureName 
-		{
-			get 
-			{
-				var user = UserService.GetCurrentUser();
-
-				if(user.HasPreference(CultureNamePreferenceKey))
-				{
-					return user.GetPreference(CultureNamePreferenceKey).Value.ToString();
-				}
-
-				return "en-US";
-			}
 			
-			set 
-			{ 
-				var user = UserService.GetCurrentUser();
-				user.SetPreference(CultureNamePreferenceKey, value);
-				UserService.SaveCurrentUser(user);
-			}
-		}
 		#endregion
 		
 		#region Public methods
@@ -101,7 +78,19 @@ namespace Skahal.Infrastructure.Framework.PCL.Globalization
 		public static void Initialize(IGlobalizationLabelRepository labelRepository)
 		{
 			s_labelRepository = labelRepository;
-			s_labelRepository.LoadCultureLabels (SelectedCultureName);
+			s_labelRepository.LoadCultureLabels (CurrentCulture.Name);
+		}
+
+		/// <summary>
+		/// Initialize the specified labelRepository and currentCultureInfo.
+		/// </summary>
+		/// <param name="labelRepository">Label repository.</param>
+		/// <param name="currentCultureInfo">Current culture info.</param>
+		public static void Initialize(IGlobalizationLabelRepository labelRepository, CultureInfo currentCultureInfo)
+		{
+			s_labelRepository = labelRepository;
+			CurrentCulture = currentCultureInfo;
+			s_labelRepository.LoadCultureLabels(currentCultureInfo.Name);
 		}
 
 		/// <summary>
